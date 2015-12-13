@@ -21,7 +21,7 @@ function Session(sessionNumber,sessionWeekDay,sessionDate,week){
 function Schedule(configObj){
     // update internal values
     var weekdayNumberToWord= {0:"Sunday",1:"Monday",2:"Tuesday",3:"Wednesday",4:"Thursday",5:"Friday",6:"Saturday"};
-    var currentDay, currentWeekNumber
+    var currentDay, currentWeekNumber;
     this.startDate = configObj.startDate;
     this.numberOfSessions = configObj.numberOfSessions;
     var startDateDate = new Date(this.startDate);
@@ -31,7 +31,7 @@ function Schedule(configObj){
         //console.log("Start date is not valid")
     } else{
         //console.log("Start date is valid")
-    };
+    }
     currentDay = startDateDate;
     currentWeekNumber = configObj.startWeekNumber;
     this.sessions = [];
@@ -42,15 +42,15 @@ function Schedule(configObj){
         //console.log(dateObj)
         currentWeekNumber = dateObj.weekNumber;
         currentDay = dateObj.nextDate;
-    };
     }
+    }
+
+
 var dateFormat = function(someDate){
-        var dateParts = [];
-        dateParts.push(someDate.getMonth() +1);
-        dateParts.push(someDate.getDate());
-        dateParts.push(someDate.getYear() + 1900);
-        return dateParts.join("/");
-    }
+    var month = someDate.getMonth() +1;
+    var year = someDate.getYear() + 1900;
+    return month + "/" + someDate.getDate() + "/" + year;
+}
 var isOnBreak = function(currentDate, breakStart, breakEnd){
     var breakStartDate = new Date(breakStart);
     var breakEndDate = new Date(breakEnd);
@@ -59,18 +59,18 @@ var isOnBreak = function(currentDate, breakStart, breakEnd){
 var getNextSessionDate = function(currentSessionDate, sessionDays, currentWeekNumber, breakStart, breakEnd){
     //console.log("Call getNextSessionDate");
     var weekdayLetterToNumber = {"U":0,"M":1,"T":2,"W":3,"R":4,"F":5,"S":6};
-    var sessionDaysArr = new Array();
+    var sessionDaysArr = [];
     for(var index=0 ; index<sessionDays.length; index++){
         //console.log(weekdayLetterToNumber);
 
         //Extract the days
-        var weekdayNumber= weekdayLetterToNumber[sessionDays[index]]
+        var weekdayNumber= weekdayLetterToNumber[sessionDays[index]];
         if(weekdayNumber== undefined){
             console.log("Invalid session day in config.");
             return;
         }
         sessionDaysArr.push(weekdayNumber)
-    };
+    }
     if(sessionDaysArr.length==0){
         //console.log("No dates selected");
     }
@@ -78,7 +78,7 @@ var getNextSessionDate = function(currentSessionDate, sessionDays, currentWeekNu
     // loop until currentSessionDate is next valid day.
     // handle break starting.
     var IsNextWeek = false;
-    var weekindex = sessionDaysArr.indexOf(currentSessionDate.getDay())
+    var weekindex = sessionDaysArr.indexOf(currentSessionDate.getDay());
     while(weekindex == -1 || isOnBreak(currentSessionDate, breakStart,breakEnd)){
         //console.log("while loop runs");
         if(currentSessionDate.getDay() == 0){
