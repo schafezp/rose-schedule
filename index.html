@@ -9,8 +9,14 @@
     </head>
     <body>
         <div ng-controller="MainController">
-            <h3>Test Post, Please Ignore</h3>
-            {{ name }}
+            <div class="container">
+                <h3>Test Post, Please Ignore</h3>
+
+                <div ng-repeat="session in scheduleSessions ">
+                    {{ session }}
+                </div>
+            </div>
+
         </div>
 
         <hr/>
@@ -19,6 +25,6 @@
         <!--Modules-->
         <script src="js/modules/app.js" type="text/javascript" ></script>
         <!--Controllers-->
-        <script src="js/controllers/MainController.js"></script>
+        <script src="js/controllers/MainController.js" type="text/javascript"></script>
     </body>
 </html>
