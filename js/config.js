@@ -51,6 +51,7 @@ var dateFormat = function(someDate){
     var year = someDate.getYear() + 1900;
     return month + "/" + someDate.getDate() + "/" + year;
 }
+
 var isOnBreak = function(currentDate, breakStart, breakEnd){
     var breakStartDate = new Date(breakStart);
     var breakEndDate = new Date(breakEnd);
