@@ -1,2 +1,3 @@
-var app = angular.module('schedule', []);
+var app = angular.module('schedule', ['smart-table']);
+//angular.module('schedule',['smart-table']);
 

@@ -1,9 +1,10 @@
 app.controller('MainController', ['$scope', function ($scope) {
     $scope.name = "Test name";
+    $scope.scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"];
     $scope.scheduleSessions = [
         {
             week: 1, // value comes from a session object
-            session: 2, // value comes from a session object
+            session: 1, // value comes from a session object
             sessionDate: 'Wednesday Dec 2', // value comes from a session object
             scheduleComponents: [
                 {
@@ -39,7 +40,7 @@ app.controller('MainController', ['$scope', function ($scope) {
         {
             week: 1, // value comes from a session object
             session: 2, // value comes from a session object
-            sessionDate: 'Wednesday Dec 2', // value comes from a session object
+            sessionDate: 'Wednesday Dec 3', // value comes from a session object
             scheduleComponents: [
                 {
                     name: "Topics",
