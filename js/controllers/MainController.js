@@ -1,5 +1,11 @@
-app.controller('MainController', ['$scope', function ($scope) {
-    $scope.name = "Test name";
+app.controller('MainController', ['$scope', '$sce', function ($scope, $sce) {
+    /*
+     This method allows for html to be injected into an html page to be interpreted as html. This allows for links to be interpreted from raw html.
+     Solution found here: http://stackoverflow.com/questions/19415394/with-ng-bind-html-unsafe-removed-how-do-i-inject-html
+     */
+    $scope.to_trusted = function (html_code) {
+        return $sce.trustAsHtml(html_code);
+    }
     $scope.scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"];
     $scope.scheduleSessions = [
         {
