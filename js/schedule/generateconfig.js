@@ -2,10 +2,10 @@ var fs = require('fs');
 function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeDate, numberOfSessions) {
     var returnConfig = {};
     returnConfig.sessionDays = sessionDays;
-    returnConfig.startDate = startDate;
+    returnConfig.startDate = new Date(startDate);
     returnConfig.startWeekNumber = startWeekNumber;
-    returnConfig.breakStartDate = breakStartDate;
-    returnConfig.resumeDate = resumeDate;
+    returnConfig.breakStartDate = new Date(breakStartDate);
+    returnConfig.resumeDate = new Date(resumeDate);
     returnConfig.numberOfSessions = numberOfSessions;
 
     return returnConfig;

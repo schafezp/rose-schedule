@@ -23,7 +23,8 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week) {
         {
             name: "Resources",
             values: [
-                '<a href="../Slides/Introductions.pdf">Slides</a>',
+                //'<a href="../Slides/Introductions.pdf">Slides</a>',
+                '<a href="http://www.rose-hulman.edu/class/csse/csse490WebServicesDev/201620/Slides/Introductions.pdf">Intro Slides</a>',
                 '<a href="http://expressjs.com/starter/installing.html">Express Installation</a>',
                 '<a href="https://docs.mongodb.org/manual/installation/">MongoDB installation</a>'
             ]
@@ -31,20 +32,20 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week) {
         {
             name: "Reading",
             values: [
-                '<a href="../syllabus.html">Course Syllabus</a>',
+                '<a href="./syllabus.html">Course Syllabus</a>',
                 '<a href="https://docs.mongodb.org/manual/">MongoDB Documentation</a>',
                 ' <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">JavaScript Primer</a>',
-                '<a href="../Assignments/HelloWorldExpressExample.pdf">Hello World Express Exampla</a>',
-                '<a href="../Assignments/GettingStartedWithMongoDB.pdf">Getting Started with MongoDB</a>'
+                //'<a href="../Assignments/HelloWorldExpressExample.pdf">Hello World Express Exampla</a>',
+                '<a href="http://lmgtfy.com/?q=Getting+Started+with+MongoDB/">Getting Started with MongoDB</a>'
             ]
         }
-    ]
+    ];
 
     return returnSession;
 }
 function Schedule(configObj) {
     // update internal values
-    var returnSchedule = {}
+    var returnSchedule = {};
     var weekdayNumberToWord = {
         0: "Sunday",
         1: "Monday",
@@ -59,7 +60,7 @@ function Schedule(configObj) {
     returnSchedule.numberOfSessions = configObj.numberOfSessions;
     var startDateDate = new Date(configObj.startDate);
     // sort list just in case people entered dates in the wrong order.
-    if (weekdayNumberToWord[startDateDate.getDay()] == undefined) {
+    if (weekdayNumberToWord[startDateDate.getDay()] === undefined) {
         //console.log("Start date is not valid")
     } else {
         //console.log("Start date is valid")
@@ -68,7 +69,7 @@ function Schedule(configObj) {
     currentWeekNumber = configObj.startWeekNumber;
     returnSchedule.sessions = [];
     for (var dayOfSession = 1; dayOfSession <= configObj.numberOfSessions; dayOfSession++) {
-        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber)
+        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber);
         returnSchedule.sessions.push(currentSession);
         var dateObj = getNextSessionDate(currentDay, configObj.sessionDays, currentWeekNumber, configObj.breakStartDate, configObj.resumeDate);
         //console.log(dateObj)
@@ -77,7 +78,7 @@ function Schedule(configObj) {
 
     }
 
-    return returnSchedule
+    return returnSchedule;
 }
 
 
@@ -85,13 +86,13 @@ var dateFormat = function (someDate) {
     var month = someDate.getMonth() + 1;
     var year = someDate.getYear() + 1900;
     return month + "/" + someDate.getDate() + "/" + year;
-}
+};
 
 var isOnBreak = function (currentDate, breakStart, breakEnd) {
     var breakStartDate = new Date(breakStart);
     var breakEndDate = new Date(breakEnd);
     return (breakStartDate <= currentDate) && (currentDate < breakEndDate);
-}
+};
 var getNextSessionDate = function (currentSessionDate, sessionDays, currentWeekNumber, breakStart, breakEnd) {
     //console.log("Call getNextSessionDate");
     var weekdayLetterToNumber = {"U": 0, "M": 1, "T": 2, "W": 3, "R": 4, "F": 5, "S": 6};
@@ -101,13 +102,13 @@ var getNextSessionDate = function (currentSessionDate, sessionDays, currentWeekN
 
         //Extract the days
         var weekdayNumber = weekdayLetterToNumber[sessionDays[index]];
-        if (weekdayNumber == undefined) {
+        if (weekdayNumber === undefined) {
             console.log("Invalid session day in config.");
             return;
         }
-        sessionDaysArr.push(weekdayNumber)
+        sessionDaysArr.push(weekdayNumber);
     }
-    if (sessionDaysArr.length == 0) {
+    if (sessionDaysArr.length === 0) {
         //console.log("No dates selected");
     }
     currentSessionDate.setDate(currentSessionDate.getDate() + 1);
@@ -117,7 +118,7 @@ var getNextSessionDate = function (currentSessionDate, sessionDays, currentWeekN
     var weekindex = sessionDaysArr.indexOf(currentSessionDate.getDay());
     while (weekindex == -1 || isOnBreak(currentSessionDate, breakStart, breakEnd)) {
         //console.log("while loop runs");
-        if (currentSessionDate.getDay() == 0) {
+        if (currentSessionDate.getDay() === 0) {
             IsNextWeek = true;
         }
         currentSessionDate.setDate(currentSessionDate.getDate() + 1);
@@ -131,7 +132,7 @@ var getNextSessionDate = function (currentSessionDate, sessionDays, currentWeekN
 
     return returnobj;
 
-}
+};
 
 var writeToCurrentSchedule = function (scheduleObject) {
     fs.writeFile("currentschedule.json", JSON.stringify(scheduleObject), function (err) {
@@ -139,8 +140,8 @@ var writeToCurrentSchedule = function (scheduleObject) {
             return console.log(err);
         }
         console.log("New schedule object saved")
-    })
+    });
 };
 var importConfig = JSON.parse(fs.readFileSync('currentconfig.json', 'utf8'));
-var updatedSchedule = Schedule(importConfig);
+var updatedSchedule = new Schedule(importConfig);
 writeToCurrentSchedule(updatedSchedule);

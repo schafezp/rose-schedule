@@ -1,8 +1,1 @@
-{
-  "sessionDays": "MWR",
-  "startDate": "11/30/2015",
-  "startWeekNumber": 1,
-  "breakStartDate": "12/21/2015",
-  "resumeDate": "1/4/2016",
-  "numberOfSessions": 30
-}
+{"sessionDays":"MWR","startDate":"2015-11-30T05:00:00.000Z","startWeekNumber":1,"breakStartDate":"2015-12-21T05:00:00.000Z","resumeDate":"2016-01-04T05:00:00.000Z","numberOfSessions":30}
