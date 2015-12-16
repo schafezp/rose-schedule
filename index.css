@@ -1,0 +1,9 @@
+.a-unstyled,
+.a-unstyled:link,
+.a-unstyled:visited,
+.a-unstyled:hover,
+.a-unstyled:active {
+    color: #000000; /*color of your choosing*/
+    text-decoration: none;
+    font-weight: normal;
+}
