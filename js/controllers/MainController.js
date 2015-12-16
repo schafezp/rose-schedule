@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope', '$sce', function ($scope, $sce) {
+app.controller('MainController', ['$scope', '$sce', '$http', function ($scope, $sce, $http) {
     /*
      This method allows for html to be injected into an html page to be interpreted as html. This allows for links to be interpreted from raw html.
      Solution found here: http://stackoverflow.com/questions/19415394/with-ng-bind-html-unsafe-removed-how-do-i-inject-html
@@ -6,7 +6,10 @@ app.controller('MainController', ['$scope', '$sce', function ($scope, $sce) {
     $scope.to_trusted = function (html_code) {
         return $sce.trustAsHtml(html_code);
     }
+
     $scope.scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"];
+
+
     $scope.scheduleSessions = [
         {
             week: 1, // value comes from a session object
@@ -43,6 +46,7 @@ app.controller('MainController', ['$scope', '$sce', function ($scope, $sce) {
             ]
         }
     ]
+    //$scope.scheduleSessions = JSON.parse(fs.readFileSync('../schedule/currentschedule.txt','utf8'));
     var dateFormat = function (someDate) {
         var month = someDate.getMonth() + 1;
         var year = someDate.getYear() + 1900;
@@ -58,6 +62,11 @@ app.controller('MainController', ['$scope', '$sce', function ($scope, $sce) {
         newsession.session = firstSched.session + 1;
         $scope.scheduleSessions.push(newsession);
     }
+    /*$http.get('js/schedule/currentschedule.json').success(function(data){
+     $scope.scheduleSessions = data;
+     })
+     */
+
 
 
 //$scope.scheduleSessions = [
