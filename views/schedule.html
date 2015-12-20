@@ -1,0 +1,71 @@
+<div ng-controller="MainController">
+    <div class="container-fluid">
+        <!--ID that identifies the top for anchorScroll-->
+        <div id="top"></div>
+        <h3>{{className}} Schedule Page</h3>
+        <!--Add hover button in the lower right corner which brings you back to the top-->
+        <div class="hover-button">
+            <button type="button" class="btn btn-primary btn-lg btn-block " ng-click="gotoID('top')">
+                <span ng-bind-html="to_trusted('&uarr;')"></span>
+
+            </button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="gotoID('bottom')">
+                <span ng-bind-html="to_trusted('&darr;')"></span>
+
+            </button>
+        </div>
+
+        <!-- TODO: For some reason bootstrap displayed an incorrect glyph on my firefox.
+        This should be fixed so that we are using a pretty bootstrap arrow rather than a janky chevron.
+        <button type="button" class="btn btn-default btn-sm hover-button">
+            <span class="glyphicon glyphicon-arrow-up"></span>
+        </button>
+        -->
+        <a href="#/home" title="">Go Back To Home</a>
+
+        <p>Quick Jump to Session:
+
+        <div ng-repeat="schedule in scheduleSessions" class="btn-group">
+
+            <a class="btn btn-default btn-xs" ng-click="gotoID('session' + schedule.sessionNumber)">{{schedule.sessionNumber}}</a>
+        </div>
+        </p>
+        <table st-table="rowCollection" class="table table-striped">
+            <thead>
+            <tr>
+                <th class="text-center">week</th>
+                <th class="text-center">session</th>
+                <th ng-repeat="component in scheduleComponentNames" class="text-center">
+                    {{ component}}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="schedule in scheduleSessions">
+                <td class="text-center">{{schedule.week}}</td>
+                <td>
+                    <p class="text-center">
+                        <a id="session{{schedule.sessionNumber}}" class="a-unstyled"> {{schedule.sessionNumber}}</a>
+                        <br/>
+                        {{schedule.sessionDate}}
+                    </p>
+                </td>
+                <td ng-repeat="componentName in scheduleComponentNames">
+                    <div ng-repeat="component in schedule.scheduleComponents">
+                        <ul ng-show="component.name == componentName">
+                            <li ng-repeat="value in component.values">
+                                <div ng-bind-html="to_trusted(value)"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    {{schedule.name}}
+                    {{component}}
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a id="bottom"></a>
+    </div>
+
+</div>

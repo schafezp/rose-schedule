@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope', '$sce', '$http', function ($scope, $sce, $http) {
+app.controller('MainController', ['$scope', '$sce', '$http', '$location', '$anchorScroll', function ($scope, $sce, $http, $location, $anchorScroll) {
     /*
      This method allows for html to be injected into an html page to be interpreted as html. This allows for links to be interpreted from raw html.
      Solution found here: http://stackoverflow.com/questions/19415394/with-ng-bind-html-unsafe-removed-how-do-i-inject-html
@@ -6,9 +6,16 @@ app.controller('MainController', ['$scope', '$sce', '$http', function ($scope, $
     $scope.to_trusted = function (html_code) {
         return $sce.trustAsHtml(html_code);
     };
-
+    $scope.linkTo = function (id) {
+        $location.url(id);
+        e
+    };
+    $scope.gotoID = function (id) {
+        $location.hash(id);
+        $anchorScroll();
+    };
     $scope.scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"];
-
+    $scope.className = "CSSE 490";
 /*Hey, Zach! Here's some differences between Generated schedule (pasted here) and example schedule:
     generated schedule starts like this:
         {"startDate":"2015-11-30T05:00:00.000Z","numberOfSessions":30,"sessions":[stuff below]...
@@ -70,8 +77,8 @@ app.controller('MainController', ['$scope', '$sce', '$http', function ($scope, $
     //     newsession.session = firstSched.session + 1;
     //     $scope.scheduleSessions.push(newsession);
     // }
-
-    /*$http.get('js/schedule/currentschedule.json').success(function(data){
+    /*
+     $http.get('js/schedule/currentschedule.json').success(function(data){
      $scope.scheduleSessions = data;
      })
      */
@@ -151,3 +158,43 @@ app.controller('MainController', ['$scope', '$sce', '$http', function ($scope, $
 //    ];
     $scope.myname = "my name"
 }]);
+
+//var app = angular.module('angularjs-starter', []);
+//
+//app.config(function($routeProvider) {
+//    $routeProvider.when('/test', {
+//            controller: 'TestCtrl',
+//            templateUrl: 'test.html'
+//        })
+//        .when('/weee', {
+//            controller: 'WeeeCtrl',
+//            templateUrl: 'weee.html'
+//        });
+//});
+//
+//app.run(function($rootScope, $location, $anchorScroll, $routeParams) {
+//    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+//        $location.hash($routeParams.scrollTo);
+//        $anchorScroll();
+//    });
+//})
+//
+//app.controller('MainCtrl', function($scope, $location, $anchorScroll, $routeParams) {
+//    $scope.gotoRow = function(sessionNumber){
+//        //$location.hash('session' + rowNumber);
+//        console.log("going to row")
+//        $location.hash(sessionNumber);
+//        $anchorScroll();
+//    };
+//    $scope.range = function(n) {
+//        return new Array(n);
+//    };
+//});
+//
+//
+//app.controller('TestCtrl', function($scope) {
+//});
+//
+//
+//app.controller('WeeeCtrl', function($scope, $location, $anchorScroll, $routeParams) {
+//});
