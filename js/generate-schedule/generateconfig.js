@@ -1,5 +1,5 @@
 var fs = require('fs');
-function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeDate, numberOfSessions) {
+function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeDate, numberOfSessions, scheduleComponentNames) {
     var returnConfig = {};
     returnConfig.sessionDays = sessionDays;
     returnConfig.startDate = new Date(startDate);
@@ -7,12 +7,12 @@ function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeD
     returnConfig.breakStartDate = new Date(breakStartDate);
     returnConfig.resumeDate = new Date(resumeDate);
     returnConfig.numberOfSessions = numberOfSessions;
-
+    returnConfig.scheduleComponentNames = scheduleComponentNames;
     return returnConfig;
 }
 
 // Create your desired configuration object here.
-var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30);
+var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30, ["Due", "Topics", "Resources", "Reading", "Programs", "Whatever"]);
 
 var writeToCurrentConfig = function (configObject) {
     fs.writeFile("currentconfig.json", JSON.stringify(configObject), function (err) {

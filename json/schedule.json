@@ -1,5 +1,13 @@
 {
-  "startDate": "2015-11-30T05:00:00.000Z",
+  "scheduleComponentNames": [
+    "Due",
+    "Topics",
+    "Resources",
+    "Reading",
+    "Programs",
+    "Whatever"
+  ],
+  "startDate": "2015-11-30T06:00:00.000Z",
   "numberOfSessions": 30,
   "sessions": [
     {
@@ -8,6 +16,10 @@
       "sessionDate": "11/30/2015",
       "week": 1,
       "scheduleComponents": [
+        {
+          "name": "Due",
+          "values": []
+        },
         {
           "name": "Topics",
           "values": [
@@ -33,6 +45,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -43,6 +63,10 @@
       "week": 1,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -67,6 +91,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -77,6 +109,10 @@
       "week": 1,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -101,6 +137,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -111,6 +155,10 @@
       "week": 2,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -135,6 +183,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -145,6 +201,10 @@
       "week": 2,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -169,6 +229,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -179,6 +247,10 @@
       "week": 2,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -203,6 +275,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -213,6 +293,10 @@
       "week": 3,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -237,6 +321,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -247,6 +339,10 @@
       "week": 3,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -271,6 +367,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -281,6 +385,10 @@
       "week": 3,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -305,6 +413,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -315,6 +431,10 @@
       "week": 4,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -339,6 +459,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -349,6 +477,10 @@
       "week": 4,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -373,6 +505,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -383,6 +523,10 @@
       "week": 4,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -407,6 +551,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -417,6 +569,10 @@
       "week": 5,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -441,6 +597,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -451,6 +615,10 @@
       "week": 5,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -475,6 +643,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -485,6 +661,10 @@
       "week": 5,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -509,6 +689,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -519,6 +707,10 @@
       "week": 6,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -543,6 +735,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -553,6 +753,10 @@
       "week": 6,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -577,6 +781,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -587,6 +799,10 @@
       "week": 6,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -611,6 +827,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -621,6 +845,10 @@
       "week": 7,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -645,6 +873,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -655,6 +891,10 @@
       "week": 7,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -679,6 +919,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -689,6 +937,10 @@
       "week": 7,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -713,6 +965,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -723,6 +983,10 @@
       "week": 8,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -747,6 +1011,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -757,6 +1029,10 @@
       "week": 8,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -781,6 +1057,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -791,6 +1075,10 @@
       "week": 8,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -815,6 +1103,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -825,6 +1121,10 @@
       "week": 9,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -849,6 +1149,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -859,6 +1167,10 @@
       "week": 9,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -883,6 +1195,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -893,6 +1213,10 @@
       "week": 9,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -917,6 +1241,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -927,6 +1259,10 @@
       "week": 10,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -951,6 +1287,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -961,6 +1305,10 @@
       "week": 10,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -985,6 +1333,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     },
@@ -995,6 +1351,10 @@
       "week": 10,
       "scheduleComponents": [
         {
+          "name": "Due",
+          "values": []
+        },
+        {
           "name": "Topics",
           "values": [
             "Review of course syllabus",
@@ -1019,6 +1379,14 @@
             " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
             "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
           ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
         }
       ]
     }

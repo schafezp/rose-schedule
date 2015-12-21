@@ -4,12 +4,19 @@
 var fs = require('fs');
 
 
-function Session(sessionNumber, sessionWeekDay, sessionDate, week) {
+function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleComponentNames) {
     var returnSession = {};
     returnSession.sessionNumber = sessionNumber;
     returnSession.sessionWeekDay = sessionWeekDay;
     returnSession.sessionDate = sessionDate;
     returnSession.week = week;
+    //todo. 
+    returnSession.scheduleComponents = [];
+    for (var i =0; i <scheduleComponentNames.length; i++) {
+        returnSession.scheduleComponents.push(writeScheduleComponent(scheduleComponentNames[i]));   
+    };
+    // ScheduleComponent returns each item below individually
+    /*
     returnSession.scheduleComponents = [
         {
             name: "Topics",
@@ -40,12 +47,17 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week) {
             ]
         }
     ];
+    */
 
     return returnSession;
 }
 function Schedule(configObj) {
     // update internal values
     var returnSchedule = {};
+    //didn't want to type long things everywhere
+    var cnames = configObj.scheduleComponentNames;
+    returnSchedule.scheduleComponentNames = cnames;
+
     var weekdayNumberToWord = {
         0: "Sunday",
         1: "Monday",
@@ -69,7 +81,7 @@ function Schedule(configObj) {
     currentWeekNumber = configObj.startWeekNumber;
     returnSchedule.sessions = [];
     for (var dayOfSession = 1; dayOfSession <= configObj.numberOfSessions; dayOfSession++) {
-        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber);
+        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber, cnames);
         returnSchedule.sessions.push(currentSession);
         var dateObj = getNextSessionDate(currentDay, configObj.sessionDays, currentWeekNumber, configObj.breakStartDate, configObj.resumeDate);
         //console.log(dateObj)
@@ -77,10 +89,50 @@ function Schedule(configObj) {
         currentDay = dateObj.nextDate;
 
     }
-
+    
     return returnSchedule;
 }
+/*
+    Returns a schedule component and populates it accordingly
+    Note that this is a generic populator, and it doesn't do anthing too fancy
 
+*/
+function writeScheduleComponent(componentCategory){
+    var returnComponent = {};
+    returnComponent.name = componentCategory;
+    switch(componentCategory){
+        case "Topics":
+            returnComponent.values =[
+                "Review of course syllabus",
+                "Brief introduction to Express.js",
+                "MongoDB installation",
+                "Getting started with MongoDB"
+            ];
+            break;
+        case "Resources":
+            returnComponent.values =[
+                //'<a href="../Slides/Introductions.pdf">Slides</a>',
+                '<a href="http://www.rose-hulman.edu/class/csse/csse490WebServicesDev/201620/Slides/Introductions.pdf">Intro Slides</a>',
+                '<a href="http://expressjs.com/starter/installing.html">Express Installation</a>',
+                '<a href="https://docs.mongodb.org/manual/installation/">MongoDB installation</a>'
+            ];
+            break;
+        case "Reading":
+            returnComponent.values = [
+                '<a href="./syllabus.html">Course Syllabus</a>',
+                '<a href="https://docs.mongodb.org/manual/">MongoDB Documentation</a>',
+                ' <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">JavaScript Primer</a>',
+                //'<a href="../Assignments/HelloWorldExpressExample.pdf">Hello World Express Exampla</a>',
+                '<a href="http://lmgtfy.com/?q=Getting+Started+with+MongoDB/">Getting Started with MongoDB</a>'
+            ];
+            break;
+
+        default:
+            returnComponent.values = [];
+
+    }
+    return returnComponent;
+}
 
 var dateFormat = function (someDate) {
     var month = someDate.getMonth() + 1;
