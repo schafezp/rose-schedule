@@ -1,5 +1,6 @@
 <div ng-controller="MainController">
-    <div class="container-fluid">
+    <!--TODO: If you start app then immedietely switch to this page it shows trash for a second-->
+    <div class="container-fluid" ng-hide="typeof(scheduleSessions) != undefined">
         <!--ID that identifies the top for anchorScroll-->
         <div id="top"></div>
         <h3>{{className}} Schedule Page</h3>

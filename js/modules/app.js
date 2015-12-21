@@ -1,4 +1,9 @@
 var app = angular.module('schedule', ['smart-table', 'ngRoute']);
+app.run(['ScheduleService', function (ScheduleService) {
+    //Initialize session data for service.
+    ScheduleService.saveSessions();
+}
+]);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/home', {
