@@ -1,4 +1,5 @@
-<div ng-controller="MainController">
+<link rel="stylesheet" type="text/css" href="css/schedule.css">
+<div>
     <!--TODO: If you start app then immedietely switch to this page it shows trash for a second-->
     <div class="container-fluid" ng-hide="typeof(scheduleSessions) != undefined">
         <!--ID that identifies the top for anchorScroll-->
@@ -11,6 +12,7 @@
 
             </button>
             <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="gotoID('bottom')">
+
                 <span ng-bind-html="to_trusted('&darr;')"></span>
 
             </button>

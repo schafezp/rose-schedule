@@ -8,11 +8,11 @@ app.config(function ($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: 'views/home.html',
-            controller: 'MainController'
+            controller: 'HomeCtrl'
         })
         .when('/schedule', {
             templateUrl: 'views/schedule.html',
-            controller: 'MainController'
+            controller: 'ScheduleCtrl'
         })
         .otherwise({
             redirectTo: '/home'

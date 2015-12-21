@@ -9,9 +9,9 @@
 }
 
 .hover-button {
-    position: fixed;
     bottom: 2%;
     right: 2%;
     font-size: 300%;
+    position: fixed;
 }
 
