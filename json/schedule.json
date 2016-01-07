@@ -35,10 +35,32 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "11/30/2015",
       "week": 1,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
           "name": "Due",
-          "values": []
+          "values": [
+            "<a href='#/homework/homework-1.html'>Homework 1</a>"
+          ]
         },
         {
           "name": "Topics",
@@ -81,10 +103,32 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "12/2/2015",
       "week": 1,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
           "name": "Due",
-          "values": []
+          "values": [
+            "<a href='#/homework/homework-2.html'>Homework 2</a>"
+          ]
         },
         {
           "name": "Topics",
@@ -127,10 +171,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "12/3/2015",
       "week": 1,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -173,10 +236,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "12/7/2015",
       "week": 2,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -219,10 +301,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "12/9/2015",
       "week": 2,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -265,10 +366,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "12/10/2015",
       "week": 2,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -311,10 +431,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "12/14/2015",
       "week": 3,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -357,10 +496,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "12/16/2015",
       "week": 3,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -403,10 +561,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "12/17/2015",
       "week": 3,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -449,10 +626,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/4/2016",
       "week": 4,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -495,10 +691,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/6/2016",
       "week": 4,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -541,10 +756,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/7/2016",
       "week": 4,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -587,10 +821,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/11/2016",
       "week": 5,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -633,10 +886,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/13/2016",
       "week": 5,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -679,10 +951,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/14/2016",
       "week": 5,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -725,10 +1016,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/18/2016",
       "week": 6,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -771,10 +1081,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/20/2016",
       "week": 6,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -817,10 +1146,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/21/2016",
       "week": 6,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -863,10 +1211,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/25/2016",
       "week": 7,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -909,10 +1276,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/27/2016",
       "week": 7,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -955,10 +1341,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/28/2016",
       "week": 7,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1001,10 +1406,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "2/1/2016",
       "week": 8,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1047,10 +1471,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "2/3/2016",
       "week": 8,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1093,10 +1536,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "2/4/2016",
       "week": 8,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1139,10 +1601,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "2/8/2016",
       "week": 9,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1185,10 +1666,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "2/10/2016",
       "week": 9,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1231,10 +1731,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "2/11/2016",
       "week": 9,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1277,10 +1796,29 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "2/15/2016",
       "week": 10,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1323,10 +1861,29 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "2/17/2016",
       "week": 10,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",
@@ -1369,10 +1926,29 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "2/18/2016",
       "week": 10,
+      "homework": [
+        {
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
       "scheduleComponents": [
         {
-          "name": "Due",
-          "values": []
+          "name": "Due"
         },
         {
           "name": "Topics",

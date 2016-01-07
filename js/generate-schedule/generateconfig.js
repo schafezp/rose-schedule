@@ -34,6 +34,7 @@ var homework = [
     }
 ];
 
+
 var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30, ["Due", "Topics", "Resources", "Reading", "Programs", "Whatever"], homework);
 
 var writeToCurrentConfig = function (configObject) {

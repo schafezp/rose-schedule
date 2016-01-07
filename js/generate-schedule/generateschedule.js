@@ -4,17 +4,25 @@
 var fs = require('fs');
 
 
-function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleComponentNames) {
+function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleComponentNames, homework) {
     var returnSession = {};
     returnSession.sessionNumber = sessionNumber;
     returnSession.sessionWeekDay = sessionWeekDay;
     returnSession.sessionDate = sessionDate;
     returnSession.week = week;
-
+    var url = [];
+    var name = [];
+    homework.forEach(function (element, index, array) {
+        if (returnSession.sessionNumber == element.session) {
+            url.push(element.url);
+            name.push(element.name);
+        }
+    })
+    returnSession.homework = homework;
     //todo. 
     returnSession.scheduleComponents = [];
     for (var i =0; i <scheduleComponentNames.length; i++) {
-        returnSession.scheduleComponents.push(writeScheduleComponent(scheduleComponentNames[i]));   
+        returnSession.scheduleComponents.push(writeScheduleComponent(scheduleComponentNames[i], url, name));
     };
     // ScheduleComponent returns each item below individually
     /*
@@ -83,7 +91,7 @@ function Schedule(configObj) {
     currentWeekNumber = configObj.startWeekNumber;
     returnSchedule.sessions = [];
     for (var dayOfSession = 1; dayOfSession <= configObj.numberOfSessions; dayOfSession++) {
-        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber, cnames);
+        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber, cnames, configObj.homework);
         returnSchedule.sessions.push(currentSession);
         var dateObj = getNextSessionDate(currentDay, configObj.sessionDays, currentWeekNumber, configObj.breakStartDate, configObj.resumeDate);
         //console.log(dateObj)
@@ -99,10 +107,21 @@ function Schedule(configObj) {
     Note that this is a generic populator, and it doesn't do anthing too fancy
 
 */
-function writeScheduleComponent(componentCategory){
+function writeScheduleComponent(componentCategory, url, name) {
     var returnComponent = {};
     returnComponent.name = componentCategory;
     switch(componentCategory){
+        case "Due":
+            for (var i = 0; i < url.length; i++) {
+                var dueLinks = [];
+                dueLinks.push("<a href='#/homework/" + url[i] + "'>" + name[i] + "</a>")
+                returnComponent.values = dueLinks;
+            }
+            //returnComponent.values = [
+            //
+            //    "<a href='#/homework/" + url + "'>" + name + "</a>"
+            //];
+            break;
         case "Topics":
             returnComponent.values =[
                 "Review of course syllabus",
