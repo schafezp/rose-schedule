@@ -21,6 +21,26 @@
       "sample": ""
     },
     {
+      "type": "homework",
+      "session": "3",
+      "name": "Homework 3",
+      "number": 3,
+      "sessionDue": 7,
+      "url": "homework-3.html",
+      "solution": "",
+      "sample": ""
+    },
+    {
+      "type": "homework",
+      "session": "4",
+      "name": "Homework 4",
+      "number": 4,
+      "sessionDue": 10,
+      "url": "homework-4.html",
+      "solution": "",
+      "sample": ""
+    },
+    {
       "type": "lab",
       "session": "1",
       "name": "Lab 1",
@@ -35,8 +55,28 @@
       "session": "2",
       "name": "Lab 2",
       "number": 2,
-      "sessionDue": 4,
+      "sessionDue": 6,
       "url": "lab-2.html",
+      "solution": "",
+      "sample": ""
+    },
+    {
+      "type": "lab",
+      "session": "3",
+      "name": "Lab 3",
+      "number": 3,
+      "sessionDue": 9,
+      "url": "lab-3.html",
+      "solution": "",
+      "sample": ""
+    },
+    {
+      "type": "lab",
+      "session": "4",
+      "name": "Lab 4",
+      "number": 4,
+      "sessionDue": 12,
+      "url": "lab-4.html",
       "solution": "",
       "sample": ""
     }
@@ -202,8 +242,7 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/homework/homework-2.html'>Homework 2</a>",
-            "<a href='#/lab/lab-2.html'>Lab 2</a>"
+            "<a href='#/homework/homework-2.html'>Homework 2</a>"
           ]
         },
         {
@@ -296,7 +335,9 @@
       "scheduleComponents": [
         {
           "name": "Due",
-          "values": []
+          "values": [
+            "<a href='#/lab/lab-2.html'>Lab 2</a>"
+          ]
         },
         {
           "name": "Topics",
@@ -342,7 +383,9 @@
       "scheduleComponents": [
         {
           "name": "Due",
-          "values": []
+          "values": [
+            "<a href='#/homework/homework-3.html'>Homework 3</a>"
+          ]
         },
         {
           "name": "Topics",
@@ -434,7 +477,9 @@
       "scheduleComponents": [
         {
           "name": "Due",
-          "values": []
+          "values": [
+            "<a href='#/lab/lab-3.html'>Lab 3</a>"
+          ]
         },
         {
           "name": "Topics",
@@ -480,7 +525,9 @@
       "scheduleComponents": [
         {
           "name": "Due",
-          "values": []
+          "values": [
+            "<a href='#/homework/homework-4.html'>Homework 4</a>"
+          ]
         },
         {
           "name": "Topics",
@@ -572,7 +619,9 @@
       "scheduleComponents": [
         {
           "name": "Due",
-          "values": []
+          "values": [
+            "<a href='#/lab/lab-4.html'>Lab 4</a>"
+          ]
         },
         {
           "name": "Topics",

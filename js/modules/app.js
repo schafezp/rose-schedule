@@ -22,11 +22,11 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/homework-detail.html',
             controller: 'HomeworkDetailCtrl'
         })
-        .when('/labs', {
-            templateUrl: 'views/labs.html',
+        .when('/lab', {
+            templateUrl: 'views/lab.html',
             controller: 'LabCtrl'
         })
-        .when('/labs/:url', {
+        .when('/lab/:url', {
             templateUrl: 'views/lab-detail.html',
             controller: 'LabDetailCtrl'
         })

@@ -1,0 +1,492 @@
+<HTML>
+<HEAD>
+    <TITLE>Lab 3 -- Queue and Process Management</TITLE>
+    <META NAME="description" CONTENT="Lab 3 -- Queue and Process Management">
+    <META NAME="keywords" CONTENT="csse332_lab3">
+    <META NAME="resource-type" CONTENT="document">
+    <META NAME="distribution" CONTENT="global">
+
+    <META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+    <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+    <LINK REL="STYLESHEET" HREF="csse332_lab3.css">
+
+</HEAD>
+
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<P>
+
+<H1 ALIGN="CENTER">CSSE 332 - Operating Systems<br>Rose-Hulman Institute of Technology<br>Computer Science and Software
+    Engineering Department</H1>
+
+<H1 ALIGN="CENTER">Lab 3 -- Queue and Process Management</H1>
+
+<P>
+    This and the remaining labs should be done in pairs - only
+    <SPAN CLASS="textbf">one</SPAN> lab should be submitted.
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+    <SPAN CLASS="arabic">1</SPAN> Objectives</A>
+</H1>
+
+<P>
+    Following completion of this lab you should be able to:
+
+<P>
+
+
+<UL>
+    <LI>Implement a queue data structure in C.
+    </LI>
+    <LI>Use the <TT>fork</TT> system call to spawn child processes.
+    </LI>
+    <LI>Use the <TT>exec</TT> family of system calls to overlay the
+        process image of a child process with another executable program.
+    </LI>
+    <LI>Use the <TT>gettimeofday</TT> system call to generate timing
+        statistics for the creation and execution of processes.
+    </LI>
+    <LI>Explain process creation, process termination and process
+        management.
+    </LI>
+</UL>
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+    <SPAN CLASS="arabic">2</SPAN> Tasks</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00021000000000000000">
+    <SPAN CLASS="arabic">1</SPAN> Queue (100 points)</A>
+</H2>
+
+<P>
+    In the exercise, you will use the notion of a linked-list to implement
+    a queue data structure. Queues are heavily used in operating systems
+    for various tasks. You will use pointers to create and maintain the
+    queue. The functions to be implemented are described in the header
+    file included in the project that you will checkout from your svn
+    repository.
+
+<P>
+    <SPAN CLASS="textbf">Linked-list:</SPAN> A linked list is a data structure that contains
+    a list of nodes. A node has two parts:
+
+<OL>
+    <LI>Data
+    </LI>
+    <LI>A pointer to next node
+    </LI>
+</OL>
+
+<P>
+    Typically, the last node in the list will not point to any other node;
+    hence, its next node pointer will point to <TT>NULL</TT>. Using the
+    next node pointer, it is possible to keep track of the entire
+    linked-list and access any node in the list. A linked-list typically
+    has a head pointer as shown in the figure below. The head pointer
+    points to the first node in the list. The figure below shows a
+    singly-linked-list.
+
+<P>
+
+<P>
+    <SPAN CLASS="textbf">Using a singly-linked-list to implement a queue:</SPAN> A queue is a
+    data structure in which a node is always added to the <SPAN CLASS="textbf">tail</SPAN> of
+    the list and removed from the <SPAN CLASS="textbf">head</SPAN> of the list. It is a data
+    structure with a <SPAN CLASS="textit">First-In First-Out (FIFO)</SPAN> discipline. To
+    model this behavior, implement a singly-linked-list with a
+    <SPAN CLASS="textbf">head</SPAN> and a <SPAN CLASS="textbf">tail</SPAN> pointer. The <SPAN
+        CLASS="textbf">tail</SPAN> pointer
+    points to the last node in the list or <TT>NULL</TT> if the list is
+    empty. The <SPAN CLASS="textbf">head</SPAN> pointer points to the first node in the list
+    or <TT>NULL</TT> if the list is empty. Each node in the list will
+    have a pointer to the next node in the list or <TT>NULL</TT> if there
+    is no next node.
+
+<P>
+    The structure for a queue instance, the structure for a node, function
+    prototypes and their descriptions are available in <TT>queue.h</TT>.
+
+<P>
+
+    <OL>
+        <LI>Checkout the <SPAN CLASS="textbf">Queue</SPAN> project in the <SPAN CLASS="textbf">lab3</SPAN>
+            directory from your svn repository into your svn local workspace.
+
+<P>
+    </LI>
+    <LI>In <TT>queue.c</TT>, implement the functions described in
+        <TT>queue.h</TT>. You must use pointers as described in the header
+        file and you must use a singly-linked-list with head and tail
+        pointers. You are provided with <TT>driver.c</TT>
+        to test your implementation. You may <SPAN CLASS="textbf">not</SPAN>
+        modify <TT>queue.h</TT>.
+
+<P>
+    </LI>
+    <LI>Create a <SPAN CLASS="textbf">Makefile</SPAN> for the Queue project that
+        will build your executable.
+
+<P>
+    </LI>
+<LI>Commit your work, including the Makefile, to your repository
+    with an appropriate commit message.
+</LI>
+</OL>
+
+<P>
+    Sample output for the printQueue function is provided below:
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+    <TR>
+        <TD ALIGN="CENTER">Process id</TD>
+        <TD ALIGN="CENTER">Arrival Time</TD>
+        <TD ALIGN="CENTER">Service Time</TD>
+        <TD ALIGN="CENTER">Remaining Time</TD>
+    </TR>
+    <TR>
+        <TD ALIGN="CENTER">1</TD>
+        <TD ALIGN="CENTER">0</TD>
+        <TD ALIGN="CENTER">10</TD>
+        <TD ALIGN="CENTER">10</TD>
+    </TR>
+    <TR>
+        <TD ALIGN="CENTER">2</TD>
+        <TD ALIGN="CENTER">1</TD>
+        <TD ALIGN="CENTER">11</TD>
+        <TD ALIGN="CENTER">11</TD>
+    </TR>
+    <TR>
+        <TD ALIGN="CENTER">3</TD>
+        <TD ALIGN="CENTER">2</TD>
+        <TD ALIGN="CENTER">12</TD>
+        <TD ALIGN="CENTER">12</TD>
+    </TR>
+    <TR>
+        <TD ALIGN="CENTER">4</TD>
+        <TD ALIGN="CENTER">3</TD>
+        <TD ALIGN="CENTER">13</TD>
+        <TD ALIGN="CENTER">13</TD>
+    </TR>
+    <TR>
+        <TD ALIGN="CENTER">5</TD>
+        <TD ALIGN="CENTER">4</TD>
+        <TD ALIGN="CENTER">14</TD>
+        <TD ALIGN="CENTER">14</TD>
+    </TR>
+</TABLE>
+
+<P>
+
+<H2><A NAME="SECTION00022000000000000000">
+    <SPAN CLASS="arabic">2</SPAN> createProcesses</A>
+</H2>
+
+<P>
+    Checkout the <SPAN CLASS="textbf">createProcesses</SPAN> project in the <SPAN CLASS="textbf">lab3</SPAN>
+    directory from your svn repository into your svn local workspace. The
+    files in this project should be used as sample files for this lab.
+    The lecture slides on <A NAME="tex2html1"
+                             HREF="../slides/06-Processes.pdf">Process operations</A> may also be helpful.
+
+<P>
+
+<H2><A NAME="SECTION00023000000000000000">
+    <SPAN CLASS="arabic">3</SPAN> Processes (100 points)</A>
+</H2>
+
+<P>
+    There are two different ways to organize a parent-children process
+    hierarchy. The first is a process chain, in which the parent waits
+    for each child process to complete before creating a new child. The
+    second is a process fan, which we will be using for this lab. In a
+    process fan the parent creates all of the child processes at once
+    allowing them to execute in parallel. The figures below show a process
+    chain, on the left, and a process fan, on the right.
+
+<P>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<P>
+    Checkout the <SPAN CLASS="textbf">Processes</SPAN> project in the <SPAN CLASS="textbf">lab3</SPAN> directory
+    from your svn repository into your svn local workspace.
+
+<P>
+
+    <OL>
+        <LI>Write a C program in the files <TT>processes.c</TT> and
+            <TT>processes.h</TT> that creates child processes in a fan:
+
+            <OL>
+                <LI>Accept three command line arguments: 1) <SPAN CLASS="MATH"><IMG
+                        WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                        SRC="csse332_lab3-img1.png"
+                        ALT="$n$"></SPAN> the number of
+                    child processes to create; 2) <SPAN CLASS="MATH"><IMG
+                            WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                            SRC="csse332_lab3-img2.png"
+                            ALT="$x$"></SPAN> a delay factor in microseconds
+                    for each child processes; and 3) the name of a source file
+                    containing individual file names one per line to pass to the
+                    child processes.
+
+<P>
+    <TT>Files.txt</TT> included in the project is an example.
+
+<P>
+    </LI>
+    <LI>Use a loop to create a process fan of <SPAN CLASS="MATH"><IMG
+            WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+            SRC="csse332_lab3-img1.png"
+            ALT="$n$"></SPAN> child processes
+        that will run in parallel.
+
+<P>
+    Recall: In a process fan, the children processes are all created
+    by the parent process at once. You need to enforce this fact by
+    making sure that no child process forks.
+
+<P>
+    </LI>
+    <LI>Each child process should be assigned a local id named
+        <SPAN CLASS="textbf">index</SPAN>, which corresponds to the order in which it was
+        created. The first child process will have an <SPAN CLASS="textbf">index</SPAN> of
+        1, second will have an <SPAN CLASS="textbf">index</SPAN> of 2, and
+        so on.
+
+<P>
+    </LI>
+    <LI>Each process, including the parent process, will also have a
+        start time and an end time.
+
+<P>
+    </LI>
+    <LI>The process <SPAN CLASS="textbf">pid</SPAN> (the id returned to the parent from
+        <SPAN CLASS="textbf">fork()</SPAN>), process start time and process end time for each
+        child process should be stored in an appropriate structure.
+
+<P>
+    </LI>
+    <LI>An array of such structures should be created to store
+        process info for the n child processes. The entry for each child
+        process will be indexed by the process's <SPAN CLASS="textbf">index</SPAN>.
+
+<P>
+    </LI>
+    <LI>Immediately before each child process is created, the parent
+        should capture the current time and store it in the process info
+        structure as the start time for that child process. The process
+        <SPAN CLASS="textbf">pid</SPAN> should also be stored in the structure. The process
+        start time should be captured using the <SPAN CLASS="textbf">gettimeofday(2)</SPAN>
+        system call (``man -S 2 gettimeofday'' describes its
+        usage).
+
+<P>
+    </LI>
+    <LI>Each child process should start by sleeping
+        ((<SPAN CLASS="MATH"><IMG
+                WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_lab3-img1.png"
+                ALT="$n$"></SPAN>-<SPAN CLASS="textbf">index</SPAN>)*<SPAN CLASS="MATH"><IMG
+                WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_lab3-img2.png"
+                ALT="$x$"></SPAN>) microseconds. Use a value of 100,000
+        microseconds for <SPAN CLASS="MATH"><IMG
+                WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_lab3-img2.png"
+                ALT="$x$"></SPAN> initially. This will be varied later.
+
+<P>
+    </LI>
+    <LI>In each child process, read the corresponding line in the
+        file passed into the program (e.g. <TT>Files.txt</TT>). For
+        example, the first process created should read the first line in
+        the input file. If <SPAN CLASS="MATH"><IMG
+                WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_lab3-img1.png"
+                ALT="$n$"></SPAN> is larger than the number of lines present
+        in the file, the program should wrap back around to the first line
+        in the input file, using the same file more than once.
+
+<P>
+    </LI>
+    <LI>During execution and before terminating each child process
+        should do the following:
+
+        <OL>
+            <LI>Sleep ((<SPAN CLASS="MATH"><IMG
+                    WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                    SRC="csse332_lab3-img1.png"
+                    ALT="$n$"></SPAN>-<SPAN CLASS="textbf">index</SPAN>)*<SPAN CLASS="MATH"><IMG
+                    WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                    SRC="csse332_lab3-img2.png"
+                    ALT="$x$"></SPAN>) microseconds.
+
+<P>
+    </LI>
+    <LI>Print its <SPAN CLASS="textbf">index</SPAN> to the console.
+
+<P>
+    </LI>
+<LI>Overlay its process image with the ``<TT>myCopy</TT>''
+    program using one of the <A NAME="tex2html2"
+                                HREF="http://pubs.opengroup.org/onlinepubs/000095399/functions/exec.html">exec family of
+        system calls</A>.
+    Remember that ``<TT>myCopy</TT>'' takes two command line
+    arguments: 1) the name (or path) of the input file (read from
+    the source file by the child process); and 2) the name of the
+    corresponding output file. If the input file name is
+    <TT>filename.txt</TT>, then the output file name should be
+    <TT>filename_index_out.txt</TT>. For example,
+    <TT>FileOne.txt</TT> will correspond with
+    <TT>FileOne_1_out.txt</TT> if the child process with index 1
+    produces the output file.
+
+</LI>
+</OL>
+
+<P>
+    </LI>
+    <LI>After a child terminates, the parent should print the
+        child's <SPAN CLASS="textbf">index</SPAN> and its total time from creation to end of
+        execution to the console in the following form:
+<PRE>
+Time for process &lt;index&gt; = &lt;calculated time&gt; microseconds.
+</PRE>
+
+<P>
+    Note that the parent must get the termination time of the
+    terminated process and the appropriate entry from the array of
+    process info structures to compute the total time for that
+    process. The end time for the terminated process should also be
+    stored in its process info structure.
+
+<P>
+    </LI>
+<LI>The parent process should measure its total execution time
+    using using <SPAN CLASS="textbf">gettimeofday(2)</SPAN>. After all of the children
+    have finished execution, the parent should print to the console
+    that the children have finished, that the current process is the
+    parent process, and print the measured total execution time before
+    it exits. Ultimately, a parent's total execution time should be
+    less-than or equal to the sum of the execution times for each
+    child. Can you think of why that might be?
+
+</LI>
+</OL>
+
+<P>
+    </LI>
+    <LI>Once your program works with the fan, experiment with
+        different <SPAN CLASS="MATH"><IMG
+                WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_lab3-img2.png"
+                ALT="$x$"></SPAN> values for the sleep times of each process. By
+        looking at the program output, you should see when process begin to
+        call <SPAN CLASS="textbf">myCopy</SPAN> simultaneously and when they begin to reorder themselves
+        again.
+
+<P>
+    </LI>
+    <LI>When you turn in your assignment it should include
+        the following:
+
+        <OL>
+            <LI>Makefile and source code both <TT>processes.c</TT> and
+                <TT>myCopy.c</TT>.
+
+<P>
+    Make sure that your Makefile creates <SPAN CLASS="textbf">both</SPAN> executables.
+
+<P>
+    </LI>
+    <LI>A README file containing usage instructions.
+
+<P>
+    </LI>
+    <LI>Console printout results for at least three test cases with
+        different values of <SPAN CLASS="MATH"><IMG
+                WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_lab3-img1.png"
+                ALT="$n$"></SPAN> and <SPAN CLASS="MATH"><IMG
+                WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_lab3-img2.png"
+                ALT="$x$"></SPAN>.
+
+<P>
+    </LI>
+<LI>The input files you used for the <SPAN CLASS="textbf">processes</SPAN> and
+    <SPAN CLASS="textbf">myCopy</SPAN> executables.
+
+</LI>
+</OL>
+</LI>
+</OL>
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+    <SPAN CLASS="arabic">3</SPAN> Turning It In</A>
+</H1>
+
+<P>
+    This lab is due no later than 11:59 PM 05 January 2016.
+
+<P>
+    You will receive credit for each project <SPAN CLASS="textbf">only</SPAN> if it compiles
+    and runs on the course linux distribution.
+
+<P>
+
+    <OL>
+        <LI>Study the document <A NAME="tex2html3"
+                                  HREF="../resources/svn.html">Using subversion to
+            checkout, add, and commit assignments</A>to
+            learn how to use svn from the linux command line environment.
+
+<P>
+    </LI>
+    <LI>Only <SPAN CLASS="textbf">one</SPAN> lab should be submitted by each
+        <SPAN CLASS="textbf">pair</SPAN>. You <SPAN CLASS="textbf">must</SPAN> include both partner's names in a
+        comment at the top of all files you submit.
+
+<P>
+    </LI>
+    <LI>Add any new files/directories you created to your repository.
+
+<P>
+    </LI>
+    <LI>Commit your solutions to each project to your repository with
+        appropriate commit messages.
+
+<P>
+    </LI>
+<LI>Use the svn status command and/or point your webbrowser at
+    your svn repository to verify that you submitted your solutions.
+</LI>
+</OL>
+
+<P>
+    Note: It is good practice to commit often.
+
+<P>
+    Once the labs are graded, you can do an <SPAN CLASS="textit">svn update</SPAN> to update
+    your svn local workspace to get comments and feedback.
+
+<P>
+    <BR>
+<HR>
+<ADDRESS>
+    J.P. Mellor
+    2016-01-05
+</ADDRESS>
+</BODY>
+</HTML>

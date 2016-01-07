@@ -1,0 +1,424 @@
+<HTML>
+<HEAD>
+    <TITLE>Lab 4 -- Thread Management</TITLE>
+    <META NAME="description" CONTENT="Lab 4 -- Thread Management">
+    <META NAME="keywords" CONTENT="csse332_lab4">
+    <META NAME="resource-type" CONTENT="document">
+    <META NAME="distribution" CONTENT="global">
+
+    <META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+    <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+    <LINK REL="STYLESHEET" HREF="csse332_lab4.css">
+
+</HEAD>
+
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<P>
+
+<H1 ALIGN="CENTER">CSSE 332 - Operating Systems<br>Rose-Hulman Institute of Technology<br>Computer Science and Software
+    Engineering Department</H1>
+
+<H1 ALIGN="CENTER">Lab 4 -- Thread Management</H1>
+
+<P>
+    This lab should be done in pairs - only <SPAN CLASS="textbf">one</SPAN> lab should be
+    submitted.
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+    <SPAN CLASS="arabic">1</SPAN> Objectives</A>
+</H1>
+
+<P>
+    Following completion of this lab you should be able to:
+
+<P>
+
+
+<UL>
+    <LI>Use the POSIX threads library to create, synchronize and
+        manage threads.
+    </LI>
+    <LI>Use the gettimeofday system call to generate timing statistics
+        for the creation and execution of threads.
+    </LI>
+    <LI>Compare and contrast multithreading with multiprocessing.
+    </LI>
+    <LI>Send signals to processes and have them handle the signals in
+        defined ways.
+    </LI>
+</UL>
+
+<P>
+    Recall that there is a grading rubric that will be used to grade this lab.
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+    <SPAN CLASS="arabic">2</SPAN> Tasks</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00021000000000000000">
+    <SPAN CLASS="arabic">1</SPAN> Function Pointers</A>
+</H2>
+
+<P>
+    Checkout the <SPAN CLASS="textbf">FunctionPointers</SPAN> project in the <SPAN CLASS="textbf">lab4</SPAN>
+    directory from your svn repository into your local workspace. The file
+    in this project should be helpful in summarizing what function
+    pointers are and how they work. Both the Threads project and the
+    Signals project make use of function pointers.
+
+<P>
+
+<H2><A NAME="SECTION00022000000000000000">
+    <SPAN CLASS="arabic">2</SPAN> Threads (70 points)</A>
+</H2>
+
+<P>
+    Checkout the <SPAN CLASS="textbf">Threads</SPAN> project in the <SPAN CLASS="textbf">lab4</SPAN> directory
+    from your svn repository into your local workspace. The
+    <TT>Costs.txt</TT> file in this project should be used as a sample
+    file for this part of the lab. Don't forget to compile with the
+    <TT>-pthread</TT> compilation flag. Remember that you can review the
+    <TT>threads.xls</TT> rubric in the Threads project to understand the
+    criteria for assessment.
+
+<P>
+
+    <OL>
+        <LI>In this program you will demonstrate your understanding of
+            thread creation, thread synchronization, and POSIX thread
+            management. Write a C program in the files <TT>threads.h,c</TT>
+            that takes three command line arguments: 1) the number of threads to
+            create, <SPAN CLASS="textit">n</SPAN>, 2) an input file, <SPAN CLASS="textit">fileIn</SPAN>, and 3) an
+            output file, <SPAN CLASS="textit">fileOut</SPAN> (in that order). Your program should
+            do the following:
+
+<P>
+
+    <OL>
+        <LI>First, open the input file, <SPAN CLASS="textit">fileIn</SPAN>, and find the
+            number of values (or lines) in the file. <SPAN CLASS="textit">fileIn</SPAN> contains
+            a list of the average cost of living for various locations. Our
+            goal is to sort these values in increasing order.
+
+<P>
+    </LI>
+    <LI>Use a loop to create <SPAN CLASS="textit">n</SPAN> parallel threads (a thread fan
+        similar to the process fan from lab3), distributing the number of
+        values evenly across each thread. You can either distribute the
+        values to each thread in the loop that reads in the file, or read
+        the entire file first and then distribute the values to each
+        thread after the read.
+
+<P>
+    <SPAN CLASS="textit">Note:</SPAN> <SPAN CLASS="textit">n</SPAN> is used in the code we provided, however
+    you must create storage space for <SPAN CLASS="textit">n</SPAN> and set it to the
+    number of threads.
+
+<P>
+
+    <OL>
+        <LI>Each thread will sort its group of values using a
+            different sorting algorithm. In each thread, call one of three
+            sorting algorithms (provided in <TT>threads.c</TT>). The first
+            third of the threads created should use a brute force sorting
+            algorithm. The second third should use bubble sort. The final
+            third should use merge sort.
+
+<P>
+    </LI>
+    <LI>Each thread should track the time it takes to operate (use
+        <TT>gettimeofday</TT>), starting upon creation and ending once the
+        sorting is complete.
+
+<P>
+    </LI>
+<LI>Each thread should print its <SPAN CLASS="textit">index</SPAN> (an int that
+    represents the order in which the thread was created) and
+    <SPAN CLASS="textit">total time</SPAN> (as described above) upon completion.
+
+</LI>
+</OL>
+
+<P>
+    </LI>
+    <LI>In a loop, the parent process should wait (using
+        <TT>pthread_join</TT>) for each thread to complete. Once all of
+        the of the <SPAN CLASS="textit">n</SPAN> threads have completed, the parent should
+        call a user defined function that calculates the <SPAN CLASS="textit">maximum</SPAN>,
+        <SPAN CLASS="textit">minimum</SPAN>, and <SPAN CLASS="textit">mean</SPAN> values for each sorting
+        algorithm. It should then print these values to the console.
+
+<P>
+    </LI>
+    <LI>At this point the values should be semi-sorted: the first
+        third should be sorted via the brute force method, the second
+        third by the bubble sort method, and the third third by the merge
+        sort method.
+
+<P>
+    </LI>
+<LI>Finally, merge the results of each thread to create one
+    sorted list. This can be done without the use of the <SPAN CLASS="textit">n</SPAN>
+    threads. The sorted list should be written to <SPAN CLASS="textit">fileOut</SPAN>.
+
+</LI>
+</OL>
+
+<P>
+    </LI>
+    <LI>When you turn in your assignment, it should include the
+        following.
+
+<P>
+
+    <OL>
+        <LI>A <TT>Makefile</TT> that creates an executable called
+            <TT>threads</TT>.
+
+<P>
+    </LI>
+    <LI><TT>threads.c</TT> and <TT>threads.h</TT>.
+        <TT>threads.h</TT> should contain your constants, declared types,
+        function signatures, and any other relevant information.
+
+<P>
+    </LI>
+    <LI>Usage instructions in a <TT>README</TT> file. In this file,
+        include the <SPAN CLASS="textit">max</SPAN>, <SPAN CLASS="textit">min</SPAN>, and <SPAN
+                CLASS="textit">mean</SPAN> results
+        for at least 3 different runs of the program with different values
+        of <SPAN CLASS="textit">n</SPAN>.
+
+<P>
+    </LI>
+<LI>Any additional input files you used.
+
+</LI>
+</OL>
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00023000000000000000">
+    <SPAN CLASS="arabic">3</SPAN> Signals (75 points)</A>
+</H2>
+
+<P>
+    Checkout the <SPAN CLASS="textbf">Signals</SPAN> project in the <SPAN CLASS="textbf">lab4</SPAN> directory
+    from your svn repository into your local workspace.
+
+<P>
+
+    <OL>
+        <LI>In this program you will demonstrate your knowledge of signal
+            creation and handling (see <A NAME="tex2html1"
+                                          HREF="http://space.wccnet.edu/~chasselb/linux275/ClassNotes/process/sigbasics.htm">Signal
+                Basics</A>
+            and <A NAME="tex2html2"
+                   HREF="http://www.cs.cf.ac.uk/Dave/C/node24.html">Interrupts and
+                Signals</A> for more
+            information on signals). The program will respond to and handle
+            signals triggered by function calls, keyboard input, and terminal
+            commands given by you, the user. One of the signals that you will
+            trigger will allow your program to run the 'ps' command, which
+            displays information about processes that are running on your
+            computer. Your program will be able to gain more information about
+            each running process and kill them individually if desired. It
+            should do the following:
+
+<P>
+
+    <OL>
+        <LI>Accepts 1 command line input, which should be the username
+            you used to login to your computer.
+
+<P>
+    </LI>
+    <LI>Display a prompt to the console. This does not need to read
+        in input, but simply show that the program is waiting.
+
+<P>
+    </LI>
+    <LI>The first signal the program should respond to is
+        quitting. Use the <SPAN CLASS="textbf">SIGINT</SPAN> signal (triggered by
+        <TT>ctrl-c</TT>) to terminate the program. Remember, you can
+        "<SPAN CLASS="textit">handle</SPAN>" a signal using the <TT>(void) signal(SIG,
+            function pointer)</TT> function.
+
+<P>
+    </LI>
+    <LI>Next, use <SPAN CLASS="textbf">SIGALRM</SPAN> to trigger a beep on your
+        computer every 5 seconds. While the <SPAN CLASS="textbf">SIGINT</SPAN> signal trigger
+        is <TT>ctrl-c</TT>, the <SPAN CLASS="textbf">SIGALRM</SPAN> signal trigger is the
+        <TT>alarm</TT> function. If you enter the command <TT>echo -n</TT>
+        "<code>\007</code>" at a LINUX terminal then hit the <TT>Enter</TT> key, it
+        should trigger a beep. You might want to create a child process
+        that does the same thing in your program. You might also want to
+        experiment with using the <TT>alarm(seconds)</TT> function to
+        trigger the signal timer alarm. (<TT>man -S 3 alarm</TT> should
+        describe its usage). You may print out a short output or reprint
+        the prompt in addition to echoing the beep if you wish.
+
+<P>
+    </LI>
+    <LI>If beeping does not seem to work properly on your machine,
+        you may just wish to display a message to the
+        console. Alternatively, you may try the following steps to enable
+        sound:
+
+<P>
+
+    <OL>
+        <LI>Run <TT>gconf-editor</TT> and use it to change
+            <SPAN CLASS="textit">desktop</SPAN> <SPAN CLASS="MATH"><IMG
+                    WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                    SRC="csse332_lab4-img1.png"
+                    ALT="$\rightarrow$"></SPAN> <SPAN CLASS="textit">gnome</SPAN> <SPAN CLASS="MATH"><IMG
+                    WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                    SRC="csse332_lab4-img1.png"
+                    ALT="$\rightarrow$"></SPAN>
+            <SPAN CLASS="textit">peripherals</SPAN> <SPAN CLASS="MATH"><IMG
+                    WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                    SRC="csse332_lab4-img1.png"
+                    ALT="$\rightarrow$"></SPAN> <SPAN CLASS="textit">keyboard</SPAN>
+      <SPAN CLASS="MATH"><IMG
+              WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+              SRC="csse332_lab4-img1.png"
+              ALT="$\rightarrow$"></SPAN> <SPAN CLASS="textit">bell_mode</SPAN> from ``off'' to ``on'' (This
+            may not exist, and may be skipped) Add ``<TT>pactl
+                upload-sample /usr/share/sounds/gnome/default/alerts/bark.ogg
+                bell.ogg</TT>'' to the file <TT>&nbsp;/.xprofile</TT>
+
+<P>
+    </LI>
+    <LI>Add ``<TT>[ "$DISPLAY" ] &amp;&amp; xset b 100</TT>" to the file
+        <TT>&nbsp;/.bashrc</TT>
+
+<P>
+    </LI>
+<LI><TT>bark.ogg</TT> may be replaced with a different sound
+    effect. A computer restart may be needed.
+
+</LI>
+</OL>
+
+<P>
+    </LI>
+    <LI>Your program should support the <TT>ps</TT> command, which
+        returns a list of all current processes with their <SPAN CLASS="textbf">PID</SPAN>s
+        (their process id's). It should use your provided
+        <SPAN CLASS="textit">username</SPAN> to return only the processes associated with it
+        by running the <TT>ps -u <SPAN CLASS="textit">username</SPAN></TT> command. For
+        example if I run:
+
+<P>
+    <TT>./signal flintstones</TT>
+
+<P>
+    then <TT>flintstones</TT> is the provided <SPAN CLASS="textit">username</SPAN>. To do
+    this, trigger the command on a <SPAN CLASS="textbf">SIGQUIT</SPAN> signal, which is
+    generated by the <TT>ctrl-</TT><code>\</code> keyboard input.
+
+<P>
+    Do you need to create a child process to handle this? This is only
+    a thought question--you can decide how best to handle this and
+    the remaining signals.
+
+<P>
+    </LI>
+<LI>Finally, the <TT>ps</TT> command would not be useful if we
+    did not implement the <TT>kill</TT> command to kill
+    processes. Your program should use the <SPAN CLASS="textbf">SIGUSR1</SPAN> signal to
+    trigger a <TT>kill</TT> command. <SPAN CLASS="textbf">SIGUSR1</SPAN> signals should
+    be triggered from another terminal with the <TT>kill -USR1
+        PID</TT> command, where <TT>PID</TT> is the process id of an
+    instance of this program. Your program should prompt the user for
+    the process id of a process to kill. After reading the input from
+    the user, from its terminal, the program will execute the
+    <TT>kill</TT> command for the specified process.
+
+</LI>
+</OL>
+
+<P>
+    </LI>
+    <LI>When you turn in your assignment, it should include the
+        following:
+
+<P>
+
+    <OL>
+        <LI>A <TT>Makefile</TT> that creates an executable called
+            <TT>signals</TT>.
+
+<P>
+    </LI>
+    <LI><TT>signals.c</TT> and <TT>signals.h</TT>.
+        <TT>signals.h</TT> should contain your constants, declared types,
+        function signatures, and any other relevant information.
+
+<P>
+    </LI>
+<LI><TT>README</TT> file that explains what your program can
+    do. Make sure to describe any additional signals that you added.
+
+</LI>
+</OL>
+</LI>
+</OL>
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+    <SPAN CLASS="arabic">3</SPAN> Turning It In</A>
+</H1>
+
+<P>
+    This lab is due no later than 11:59 PM 14 January 2016.
+
+<P>
+    You will receive non-zero credit for this project <SPAN CLASS="textbf">only</SPAN> if it
+    compiles and runs on the course linux distribution.
+
+<P>
+
+    <OL>
+        <LI>Only <SPAN CLASS="textbf">one</SPAN> lab should be submitted by each
+            <SPAN CLASS="textbf">pair</SPAN>. You <SPAN CLASS="textbf">must</SPAN> include both partner's names in a
+            comment at the top of all files you submit.
+
+<P>
+    </LI>
+    <LI>Use <TT>svn add</TT> to add any new files/directories that you
+        create (including <TT>Makefiles</TT>) to your repository.
+
+<P>
+    </LI>
+    <LI>Use <TT>svn commit</TT> to commit your solutions to your
+        repository with appropriate commit messages.
+
+<P>
+    </LI>
+<LI>Use <TT>svn status</TT> in your local workspace to verify that
+    you have committed all of your solution files.
+</LI>
+</OL>
+
+<P>
+    Note: It is good practice to commit often.
+
+<P>
+    Once the labs are graded, you can do an <SPAN CLASS="textit">svn update</SPAN> to update
+    your svn local workspace to get comments and feedback.
+
+<P>
+

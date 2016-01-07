@@ -33,6 +33,26 @@ var homework = [
         url: "homework-2.html",
         solution: '',
         sample: '',
+    },
+    {
+        type: "homework",
+        session: "3",
+        name: "Homework 3",
+        number: 3,
+        sessionDue: 7,
+        url: "homework-3.html",
+        solution: '',
+        sample: '',
+    },
+    {
+        type: "homework",
+        session: "4",
+        name: "Homework 4",
+        number: 4,
+        sessionDue: 10,
+        url: "homework-4.html",
+        solution: '',
+        sample: '',
     }
 ];
 var labs = [
@@ -51,8 +71,28 @@ var labs = [
         session: "2",
         name: "Lab 2",
         number: 2,
-        sessionDue: 4,
+        sessionDue: 6,
         url: "lab-2.html",
+        solution: "",
+        sample: ""
+    },
+    {
+        type: "lab",
+        session: "3",
+        name: "Lab 3",
+        number: 3,
+        sessionDue: 9,
+        url: "lab-3.html",
+        solution: "",
+        sample: ""
+    },
+    {
+        type: "lab",
+        session: "4",
+        name: "Lab 4",
+        number: 4,
+        sessionDue: 12,
+        url: "lab-4.html",
         solution: "",
         sample: ""
     }
