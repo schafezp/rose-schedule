@@ -4,25 +4,17 @@
 var fs = require('fs');
 
 
-function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleComponentNames, homework) {
+function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleComponentNames, courseComponents) {
     var returnSession = {};
     returnSession.sessionNumber = sessionNumber;
     returnSession.sessionWeekDay = sessionWeekDay;
     returnSession.sessionDate = sessionDate;
     returnSession.week = week;
-    var url = [];
-    var name = [];
-    homework.forEach(function (element, index, array) {
-        if (returnSession.sessionNumber == element.session) {
-            url.push(element.url);
-            name.push(element.name);
-        }
-    })
-    returnSession.homework = homework;
+    returnSession.courseComponents = courseComponents;
     //todo. 
     returnSession.scheduleComponents = [];
     for (var i =0; i <scheduleComponentNames.length; i++) {
-        returnSession.scheduleComponents.push(writeScheduleComponent(scheduleComponentNames[i], url, name));
+        returnSession.scheduleComponents.push(writeScheduleComponent(scheduleComponentNames[i], courseComponents, sessionNumber));
     };
     // ScheduleComponent returns each item below individually
     /*
@@ -107,20 +99,22 @@ function Schedule(configObj) {
     Note that this is a generic populator, and it doesn't do anthing too fancy
 
 */
-function writeScheduleComponent(componentCategory, url, name) {
+function writeScheduleComponent(componentCategory, courseComponents, sessionNumber) {
     var returnComponent = {};
     returnComponent.name = componentCategory;
     switch(componentCategory){
         case "Due":
-            for (var i = 0; i < url.length; i++) {
-                var dueLinks = [];
-                dueLinks.push("<a href='#/homework/" + url[i] + "'>" + name[i] + "</a>")
-                returnComponent.values = dueLinks;
+            var dueLinks = [];
+            //TODO: May create problems switching between base 0 and base 1 indexing
+            for (var i = 0; i < courseComponents.length; i++) {
+                var component = courseComponents[i];
+                //dueLinks
+                if (component.sessionDue == sessionNumber) {
+                    dueLinks.push("<a href='#/" + component.type + "/" + component.url + "'>" + component.name + "</a>")
+                }
+
             }
-            //returnComponent.values = [
-            //
-            //    "<a href='#/homework/" + url + "'>" + name + "</a>"
-            //];
+            returnComponent.values = dueLinks;
             break;
         case "Topics":
             returnComponent.values =[

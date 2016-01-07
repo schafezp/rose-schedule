@@ -15,6 +15,7 @@ function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeD
 // Create your desired configuration object here.
 var homework = [
     {
+        type: "homework",
         session: "1",
         name: "Homework 1",
         number: 1,
@@ -24,6 +25,7 @@ var homework = [
         sample: ''
     },
     {
+        type: "homework",
         session: "2",
         name: "Homework 2",
         number: 2,
@@ -34,8 +36,9 @@ var homework = [
     }
 ];
 
-
-var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30, ["Due", "Topics", "Resources", "Reading", "Programs", "Whatever"], homework);
+var courseComponents = [];
+courseComponents = courseComponents.concat(homework)
+var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30, ["Due", "Topics", "Resources", "Reading", "Programs", "Whatever"], courseComponents);
 
 var writeToCurrentConfig = function (configObject) {
     fs.writeFile("currentconfig.json", JSON.stringify(configObject), function (err) {

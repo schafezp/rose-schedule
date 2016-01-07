@@ -1,6 +1,7 @@
 {
   "homework": [
     {
+      "type": "homework",
       "session": "1",
       "name": "Homework 1",
       "number": 1,
@@ -10,6 +11,7 @@
       "sample": ""
     },
     {
+      "type": "homework",
       "session": "2",
       "name": "Homework 2",
       "number": 2,
@@ -35,8 +37,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "11/30/2015",
       "week": 1,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -46,6 +49,143 @@
           "sample": ""
         },
         {
+          "type": "homework",
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
+      "scheduleComponents": [
+        {
+          "name": "Due",
+          "values": []
+        },
+        {
+          "name": "Topics",
+          "values": [
+            "Review of course syllabus",
+            "Brief introduction to Express.js",
+            "MongoDB installation",
+            "Getting started with MongoDB"
+          ]
+        },
+        {
+          "name": "Resources",
+          "values": [
+            "<a href=\"http://www.rose-hulman.edu/class/csse/csse490WebServicesDev/201620/Slides/Introductions.pdf\">Intro Slides</a>",
+            "<a href=\"http://expressjs.com/starter/installing.html\">Express Installation</a>",
+            "<a href=\"https://docs.mongodb.org/manual/installation/\">MongoDB installation</a>"
+          ]
+        },
+        {
+          "name": "Reading",
+          "values": [
+            "<a href=\"./syllabus.html\">Course Syllabus</a>",
+            "<a href=\"https://docs.mongodb.org/manual/\">MongoDB Documentation</a>",
+            " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
+            "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
+          ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
+        }
+      ]
+    },
+    {
+      "sessionNumber": 2,
+      "sessionWeekDay": "Wednesday",
+      "sessionDate": "12/2/2015",
+      "week": 1,
+      "courseComponents": [
+        {
+          "type": "homework",
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "type": "homework",
+          "session": "2",
+          "name": "Homework 2",
+          "number": 2,
+          "sessionDue": 4,
+          "url": "homework-2.html",
+          "solution": "",
+          "sample": ""
+        }
+      ],
+      "scheduleComponents": [
+        {
+          "name": "Due",
+          "values": []
+        },
+        {
+          "name": "Topics",
+          "values": [
+            "Review of course syllabus",
+            "Brief introduction to Express.js",
+            "MongoDB installation",
+            "Getting started with MongoDB"
+          ]
+        },
+        {
+          "name": "Resources",
+          "values": [
+            "<a href=\"http://www.rose-hulman.edu/class/csse/csse490WebServicesDev/201620/Slides/Introductions.pdf\">Intro Slides</a>",
+            "<a href=\"http://expressjs.com/starter/installing.html\">Express Installation</a>",
+            "<a href=\"https://docs.mongodb.org/manual/installation/\">MongoDB installation</a>"
+          ]
+        },
+        {
+          "name": "Reading",
+          "values": [
+            "<a href=\"./syllabus.html\">Course Syllabus</a>",
+            "<a href=\"https://docs.mongodb.org/manual/\">MongoDB Documentation</a>",
+            " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
+            "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
+          ]
+        },
+        {
+          "name": "Programs",
+          "values": []
+        },
+        {
+          "name": "Whatever",
+          "values": []
+        }
+      ]
+    },
+    {
+      "sessionNumber": 3,
+      "sessionWeekDay": "Thursday",
+      "sessionDate": "12/3/2015",
+      "week": 1,
+      "courseComponents": [
+        {
+          "type": "homework",
+          "session": "1",
+          "name": "Homework 1",
+          "number": 1,
+          "sessionDue": 3,
+          "url": "homework-1.html",
+          "solution": "",
+          "sample": ""
+        },
+        {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -99,12 +239,13 @@
       ]
     },
     {
-      "sessionNumber": 2,
-      "sessionWeekDay": "Wednesday",
-      "sessionDate": "12/2/2015",
-      "week": 1,
-      "homework": [
+      "sessionNumber": 4,
+      "sessionWeekDay": "Monday",
+      "sessionDate": "12/7/2015",
+      "week": 2,
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -114,6 +255,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -167,142 +309,13 @@
       ]
     },
     {
-      "sessionNumber": 3,
-      "sessionWeekDay": "Thursday",
-      "sessionDate": "12/3/2015",
-      "week": 1,
-      "homework": [
-        {
-          "session": "1",
-          "name": "Homework 1",
-          "number": 1,
-          "sessionDue": 3,
-          "url": "homework-1.html",
-          "solution": "",
-          "sample": ""
-        },
-        {
-          "session": "2",
-          "name": "Homework 2",
-          "number": 2,
-          "sessionDue": 4,
-          "url": "homework-2.html",
-          "solution": "",
-          "sample": ""
-        }
-      ],
-      "scheduleComponents": [
-        {
-          "name": "Due"
-        },
-        {
-          "name": "Topics",
-          "values": [
-            "Review of course syllabus",
-            "Brief introduction to Express.js",
-            "MongoDB installation",
-            "Getting started with MongoDB"
-          ]
-        },
-        {
-          "name": "Resources",
-          "values": [
-            "<a href=\"http://www.rose-hulman.edu/class/csse/csse490WebServicesDev/201620/Slides/Introductions.pdf\">Intro Slides</a>",
-            "<a href=\"http://expressjs.com/starter/installing.html\">Express Installation</a>",
-            "<a href=\"https://docs.mongodb.org/manual/installation/\">MongoDB installation</a>"
-          ]
-        },
-        {
-          "name": "Reading",
-          "values": [
-            "<a href=\"./syllabus.html\">Course Syllabus</a>",
-            "<a href=\"https://docs.mongodb.org/manual/\">MongoDB Documentation</a>",
-            " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
-            "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
-          ]
-        },
-        {
-          "name": "Programs",
-          "values": []
-        },
-        {
-          "name": "Whatever",
-          "values": []
-        }
-      ]
-    },
-    {
-      "sessionNumber": 4,
-      "sessionWeekDay": "Monday",
-      "sessionDate": "12/7/2015",
-      "week": 2,
-      "homework": [
-        {
-          "session": "1",
-          "name": "Homework 1",
-          "number": 1,
-          "sessionDue": 3,
-          "url": "homework-1.html",
-          "solution": "",
-          "sample": ""
-        },
-        {
-          "session": "2",
-          "name": "Homework 2",
-          "number": 2,
-          "sessionDue": 4,
-          "url": "homework-2.html",
-          "solution": "",
-          "sample": ""
-        }
-      ],
-      "scheduleComponents": [
-        {
-          "name": "Due"
-        },
-        {
-          "name": "Topics",
-          "values": [
-            "Review of course syllabus",
-            "Brief introduction to Express.js",
-            "MongoDB installation",
-            "Getting started with MongoDB"
-          ]
-        },
-        {
-          "name": "Resources",
-          "values": [
-            "<a href=\"http://www.rose-hulman.edu/class/csse/csse490WebServicesDev/201620/Slides/Introductions.pdf\">Intro Slides</a>",
-            "<a href=\"http://expressjs.com/starter/installing.html\">Express Installation</a>",
-            "<a href=\"https://docs.mongodb.org/manual/installation/\">MongoDB installation</a>"
-          ]
-        },
-        {
-          "name": "Reading",
-          "values": [
-            "<a href=\"./syllabus.html\">Course Syllabus</a>",
-            "<a href=\"https://docs.mongodb.org/manual/\">MongoDB Documentation</a>",
-            " <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\">JavaScript Primer</a>",
-            "<a href=\"http://lmgtfy.com/?q=Getting+Started+with+MongoDB/\">Getting Started with MongoDB</a>"
-          ]
-        },
-        {
-          "name": "Programs",
-          "values": []
-        },
-        {
-          "name": "Whatever",
-          "values": []
-        }
-      ]
-    },
-    {
       "sessionNumber": 5,
       "sessionWeekDay": "Wednesday",
       "sessionDate": "12/9/2015",
       "week": 2,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -312,6 +325,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -323,7 +337,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -366,8 +381,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "12/10/2015",
       "week": 2,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -377,6 +393,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -388,7 +405,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -431,8 +449,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "12/14/2015",
       "week": 3,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -442,6 +461,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -453,7 +473,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -496,8 +517,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "12/16/2015",
       "week": 3,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -507,6 +529,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -518,7 +541,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -561,8 +585,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "12/17/2015",
       "week": 3,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -572,6 +597,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -583,7 +609,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -626,8 +653,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/4/2016",
       "week": 4,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -637,6 +665,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -648,7 +677,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -691,8 +721,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/6/2016",
       "week": 4,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -702,6 +733,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -713,7 +745,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -756,8 +789,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/7/2016",
       "week": 4,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -767,6 +801,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -778,7 +813,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -821,8 +857,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/11/2016",
       "week": 5,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -832,6 +869,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -843,7 +881,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -886,8 +925,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/13/2016",
       "week": 5,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -897,6 +937,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -908,7 +949,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -951,8 +993,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/14/2016",
       "week": 5,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -962,6 +1005,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -973,7 +1017,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1016,8 +1061,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/18/2016",
       "week": 6,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1027,6 +1073,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1038,7 +1085,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1081,8 +1129,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/20/2016",
       "week": 6,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1092,6 +1141,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1103,7 +1153,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1146,8 +1197,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/21/2016",
       "week": 6,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1157,6 +1209,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1168,7 +1221,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1211,8 +1265,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "1/25/2016",
       "week": 7,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1222,6 +1277,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1233,7 +1289,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1276,8 +1333,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "1/27/2016",
       "week": 7,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1287,6 +1345,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1298,7 +1357,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1341,8 +1401,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "1/28/2016",
       "week": 7,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1352,6 +1413,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1363,7 +1425,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1406,8 +1469,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "2/1/2016",
       "week": 8,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1417,6 +1481,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1428,7 +1493,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1471,8 +1537,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "2/3/2016",
       "week": 8,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1482,6 +1549,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1493,7 +1561,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1536,8 +1605,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "2/4/2016",
       "week": 8,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1547,6 +1617,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1558,7 +1629,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1601,8 +1673,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "2/8/2016",
       "week": 9,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1612,6 +1685,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1623,7 +1697,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1666,8 +1741,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "2/10/2016",
       "week": 9,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1677,6 +1753,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1688,7 +1765,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1731,8 +1809,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "2/11/2016",
       "week": 9,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1742,6 +1821,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1753,7 +1833,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1796,8 +1877,9 @@
       "sessionWeekDay": "Monday",
       "sessionDate": "2/15/2016",
       "week": 10,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1807,6 +1889,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1818,7 +1901,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1861,8 +1945,9 @@
       "sessionWeekDay": "Wednesday",
       "sessionDate": "2/17/2016",
       "week": 10,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1872,6 +1957,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1883,7 +1969,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
@@ -1926,8 +2013,9 @@
       "sessionWeekDay": "Thursday",
       "sessionDate": "2/18/2016",
       "week": 10,
-      "homework": [
+      "courseComponents": [
         {
+          "type": "homework",
           "session": "1",
           "name": "Homework 1",
           "number": 1,
@@ -1937,6 +2025,7 @@
           "sample": ""
         },
         {
+          "type": "homework",
           "session": "2",
           "name": "Homework 2",
           "number": 2,
@@ -1948,7 +2037,8 @@
       ],
       "scheduleComponents": [
         {
-          "name": "Due"
+          "name": "Due",
+          "values": []
         },
         {
           "name": "Topics",
