@@ -153,7 +153,8 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/homework/homework-1.html'>Homework 1</a>"
+            "<a href='#/homework/homework-1.html'>Homework 1</a>",
+            "<a href='#/lab/lab-1.html'>Lab 1</a>"
           ]
         },
         {
@@ -201,7 +202,8 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/homework/homework-2.html'>Homework 2</a>"
+            "<a href='#/homework/homework-2.html'>Homework 2</a>",
+            "<a href='#/lab/lab-2.html'>Lab 2</a>"
           ]
         },
         {
