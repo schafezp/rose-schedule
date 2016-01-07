@@ -19,6 +19,26 @@
       "url": "homework-2.html",
       "solution": "",
       "sample": ""
+    },
+    {
+      "type": "lab",
+      "session": "1",
+      "name": "Lab 1",
+      "number": 1,
+      "sessionDue": 3,
+      "url": "lab-1.html",
+      "solution": "",
+      "sample": ""
+    },
+    {
+      "type": "lab",
+      "session": "2",
+      "name": "Lab 2",
+      "number": 2,
+      "sessionDue": 4,
+      "url": "lab-2.html",
+      "solution": "",
+      "sample": ""
     }
   ],
   "scheduleComponentNames": [
