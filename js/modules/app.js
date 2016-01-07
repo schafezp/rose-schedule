@@ -22,6 +22,14 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/homework-detail.html',
             controller: 'HomeworkDetailCtrl'
         })
+        .when('/labs', {
+            templateUrl: 'views/labs.html',
+            controller: 'LabCtrl'
+        })
+        .when('/labs/:url', {
+            templateUrl: 'views/lab-detail.html',
+            controller: 'LabDetailCtrl'
+        })
         .otherwise({
             redirectTo: '/home'
 

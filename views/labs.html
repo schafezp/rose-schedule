@@ -1,0 +1,38 @@
+<img class="container">
+<h2>Lab Page {{className}}</h2>
+<a href="#/home" title="">Go Home</a>
+
+<table st-table="rowCollection" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Lab</th>
+        <th>Topic</th>
+        <th>Due</th>
+    </tr>
+    <tr ng-repeat="lab in labs">
+        <td>
+            <p class="text-center">
+                {{lab.number}}
+            </p>
+        </td>
+        <td>
+            <p class="text-center">
+                <a href="#/labs/{{lab.url}}">{{lab.name}}</a>
+            </p>
+        </td>
+        <td><p class="text-center">
+
+            {{getSessionDate(lab.session)}}
+        </p></td>
+        <td>
+            <p>
+
+            </p>
+        </td>
+    </tr>
+    </thead>
+</table>
+<p></p>
+
+
+</div>

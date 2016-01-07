@@ -8,13 +8,13 @@ app.service('ScheduleService', function ($http, $log) {
             self.scheduleComponentNames = data.scheduleComponentNames;
             self.courseComponents = data.courseComponents;
             self.homework = [];
-            self.lab = [];
+            self.labs = [];
             $log.log(self.courseComponents)
             self.courseComponents.forEach(function (element, index, array) {
                 if (element.type == "homework") {
                     self.homework.push(element);
                 } else if (element.type == "lab") {
-                    self.lab.push(element);
+                    self.labs.push(element);
                 }
             });
         })

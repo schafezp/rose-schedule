@@ -1,0 +1,537 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Lab 1 -- LINUX Installation, C Programming</TITLE>
+<META NAME="description" CONTENT="Lab 1 -- LINUX Installation, C Programming">
+<META NAME="keywords" CONTENT="csse332_lab1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="csse332_lab1.css">
+
+</HEAD>
+
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<P>
+<H1 ALIGN="CENTER">CSSE 332 - Operating Systems<br>Rose-Hulman Institute of Technology<br>Computer Science and Software Engineering Department</H1><H1 ALIGN="CENTER">Lab 1 -- LINUX Installation, C Programming</H1>
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+<SPAN CLASS="arabic">1</SPAN> Objectives</A>
+</H1>
+
+<P>
+Following completion of this lab you should be able to:
+
+<P>
+
+
+
+<UL>
+<LI>Install LINUX on your local machine.
+</LI>
+<LI>Securely copy data from a remote machine to your local machine.
+</LI>
+<LI>Write simple C programs involving the math library, arrays,
+  structures, and files.
+</LI>
+<LI>Use subversion to commit solutions to your individual repository.
+</LI>
+</UL>
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+<SPAN CLASS="arabic">2</SPAN> Tasks</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00021000000000000000">
+<SPAN CLASS="arabic">1</SPAN> Installing Linux</A>
+</H2>
+
+<P>
+If you already have linux installed on your laptop (e.g. you installed
+it in CSSE132 or on your own), you can skip this part of the lab.
+
+<P>
+If you do not have linux installed, we recommend purchasing an mSata
+drive and following the <A NAME="tex2html1"
+  HREF="http://www.rose-hulman.edu/class/csse/csse132/labs/csse132_lab01.php">linux installation
+  instructions</A>
+from CSSE132.
+
+<P>
+Another option is to perform the following:
+
+<OL>
+<LI>Read these <A NAME="tex2html2"
+  HREF="http://www.rose-hulman.edu/class/csse/resources/Ubuntu/index.html">linux installation instructions</A>.
+
+<P>
+</LI>
+<LI>Before completing your installation process, make sure you
+  install the following software packages
+  
+<OL>
+<LI>build-essential
+</LI>
+<LI>C documentation
+</LI>
+<LI>emacs, vim, or another editor of your choice
+</LI>
+<LI>Subversion
+  
+</LI>
+</OL>
+
+<P>
+Instructions for installing these packages are posted on the
+  <A NAME="tex2html3"
+  HREF="../resources/resources.html">course Resources page</A>.
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00022000000000000000">
+<SPAN CLASS="arabic">2</SPAN> Moving Files To Your Laptop</A>
+</H2>
+
+<P>
+<SPAN  CLASS="textbf">You only need to complete this portion of the lab if you began working
+on a remote linux machine.</SPAN>
+
+<P>
+All students should be familiar with the material in this section.
+
+<P>
+
+<OL>
+<LI>On your laptop running linux, open a terminal (let's call it
+  TERM1) and change directory (use the <SPAN  CLASS="textbf">cd</SPAN> command) to the
+  location where you wish to copy your csse332 directory.
+
+<P>
+</LI>
+<LI>Open another terminal (let's call it TERM2) and ssh to an AFS
+  machine (e.g. abacus) using your network password when prompted like
+  this:
+
+<P>
+<PRE>
+&gt; ssh -l &lt;username&gt; abacus.csse.rose-hulman.edu
+</PRE>
+
+<P>
+</LI>
+<LI>Now that you are logged in to abacus, change directory to your
+  csse332 folder.
+
+<P>
+</LI>
+<LI>Type <SPAN  CLASS="textbf">pwd</SPAN> at the prompt so you have the path to your
+  csse332 folder (let's call it OSPATH).  Make sure all your Operating
+  Systems files are saved in this folder. Now switch back to
+  TERM1.
+
+<P>
+</LI>
+<LI>You are now ready to securely copy your csse332 folder to your
+  laptop. Here's how you do it:
+
+<P>
+
+<OL>
+<LI><PRE>
+&gt; scp -rv -l &lt;username&gt; abacus.csse.rose-hulman.edu:OSPATH .
+</PRE>
+
+<P>
+Note the dot.  It represents your current working directory
+
+<P>
+You should see the progress that is being made as your files are
+    being copied.
+
+<P>
+</LI>
+<LI><PRE>
+&gt; ls -al
+</PRE>
+</LI>
+</OL>
+</LI>
+</OL>
+
+<P>
+You should now see a csse332 directory in your current working
+directory.
+
+<P>
+
+<H2><A NAME="SECTION00023000000000000000">
+<SPAN CLASS="arabic">3</SPAN> Power (15 points)</A>
+</H2>
+
+<P>
+Checkout the <SPAN  CLASS="textbf">Power</SPAN> project in the <SPAN  CLASS="textbf">lab1</SPAN> directory
+from your svn repository into your svn local workspace.
+
+<P>
+Recall that your repository is located at
+http://svn.cs.rose-hulman.edu/repos/1516b-csse332-<SPAN  CLASS="textit">&lt;username&gt;</SPAN>
+where <SPAN  CLASS="textit">&lt;username&gt;</SPAN> is your Rose-Hulman username.
+
+<P>
+Write a C program in the <TT>power.c</TT> file that does the
+following:
+
+<OL>
+<LI>Prompt the user for the following inputs: a float <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="csse332_lab1-img1.png"
+ ALT="$x$"></SPAN> and an
+  integer <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="csse332_lab1-img2.png"
+ ALT="$y$"></SPAN>.
+
+<P>
+</LI>
+<LI>Use a loop to calculate <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="csse332_lab1-img3.png"
+ ALT="$x^y$"></SPAN>.  This should work for
+  positive and negative values of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="csse332_lab1-img2.png"
+ ALT="$y$"></SPAN>, as well as <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="csse332_lab1-img4.png"
+ ALT="$y=0$"></SPAN>.
+
+<P>
+</LI>
+<LI>Display the result of the computation to the screen, with
+  the output value rounded to two decimal places.
+
+<P>
+</LI>
+<LI>Also use the <SPAN  CLASS="textbf">pow</SPAN> function from the
+  math library to determine <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="csse332_lab1-img3.png"
+ ALT="$x^y$"></SPAN>.
+
+<P>
+</LI>
+<LI>Display the result of the computation to the screen, with
+  the output value rounded to two decimal places.
+
+<P>
+</LI>
+<LI>A Makefile is provided to compile the power program.
+
+<P>
+</LI>
+<LI>Submit your solution.
+  
+<OL>
+<LI>Study the document <A NAME="tex2html4"
+  HREF="../resources/svn.html">Using subversion to
+      checkout, add, and commit assignments</A> to
+    learn how to use svn from the linux command line environment.
+
+<P>
+</LI>
+<LI>Commit your solutions to your repository with appropriate
+    commit messages.
+  
+</LI>
+</OL>
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00024000000000000000">
+<SPAN CLASS="arabic">4</SPAN> Inventory (50 points)</A>
+</H2>
+
+<P>
+Checkout the <SPAN  CLASS="textbf">Inventory</SPAN> project in the <SPAN  CLASS="textbf">lab1</SPAN> project
+from your svn repository into your svn local workspace.  You should
+see the following file listings: <TT>inv.h</TT>, <TT>inv.c</TT>,
+<TT>tokenizer.c</TT>, <TT>small.txt</TT>, <TT>medium.txt</TT>, and
+<TT>large.txt</TT>.  Refer to the <A NAME="tex2html5"
+  HREF="../resources/svn.html">Using subversion
+  to checkout, add, and commit assignments</A>
+page if you are not sure how to checkout the project.
+
+<OL>
+<LI>In the file <TT>inv.h</TT>, create a structure named 
+  <TT>Inventory</TT> with the following attributes:
+  
+<OL>
+<LI>item number
+</LI>
+<LI>quantity on hand
+</LI>
+<LI>price
+</LI>
+<LI>expiration date (month/year, where <SPAN  CLASS="textbf">both</SPAN> month and
+    year are of type <SPAN  CLASS="textbf">int</SPAN>.)
+  
+</LI>
+</OL>
+
+<P>
+The expiration date must be defined as a nested structure within
+  the <TT>Inventory</TT> structure.
+
+<P>
+</LI>
+<LI>In <TT>inv.c</TT>, implement code that does the following:
+  
+<OL>
+<LI>Accept as command line arguments two file names: the first
+    name is the name of the input file and the second is the name of
+    the output file.
+
+<P>
+For example, you might want to run the program like this:
+<PRE>
+&gt; ./inv small.txt smallOutput.txt
+</PRE>
+
+<P>
+If the correct number of arguments are not provided when the
+    program starts, quit with an appropriate error message.
+
+<P>
+</LI>
+<LI>Create a static array of 100 Inventory items.
+
+<P>
+</LI>
+<LI>Read the items from the input file and use them to
+    initialize the array.
+
+<P>
+There are a few different ways to read in the
+    input. <TT>tokenizer.c</TT> presents some ideas on tokenizing
+    the input read from the file.
+
+<P>
+If the format of the data in the file (see below) well defined,
+    then you could use a function such as <SPAN  CLASS="textbf">fscanf</SPAN> to read in
+    all the data.  Remember that fscanf will allow you to read in
+    values separated by space or ``/'' or other delimiter
+    characters.
+
+<P>
+The format of the input file:
+<PRE>
+&lt;Item number&gt; &lt;space&gt; &lt;quantity&gt; &lt;space&gt; &lt;price&gt; &lt;space&gt; &lt;month/year&gt; &lt;new_line&gt;
+</PRE>
+
+<P>
+Use a loop to read from the file and stop reading when there are
+    no more items to read.
+
+<P>
+</LI>
+<LI>Display the array to the console using the following
+    format.
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Item Number</TD>
+<TD ALIGN="RIGHT">Quantity</TD>
+<TD ALIGN="RIGHT">Price</TD>
+<TD ALIGN="LEFT">Expiration Date</TD>
+</TR>
+<TR><TD ALIGN="LEFT">10034</TD>
+<TD ALIGN="RIGHT">105</TD>
+<TD ALIGN="RIGHT">2.50</TD>
+<TD ALIGN="LEFT">5/2005</TD>
+</TR>
+<TR><TD ALIGN="LEFT">10035</TD>
+<TD ALIGN="RIGHT">15</TD>
+<TD ALIGN="RIGHT">12.50</TD>
+<TD ALIGN="LEFT">10/2007</TD>
+</TR>
+<TR><TD ALIGN="LEFT">10036</TD>
+<TD ALIGN="RIGHT">52</TD>
+<TD ALIGN="RIGHT">3.75</TD>
+<TD ALIGN="LEFT">2/2009</TD>
+</TR>
+</TABLE>
+
+<P>
+Note: items are separated by a tab character (''), not just
+    white space separated.
+
+<P>
+</LI>
+<LI>Write to the output file all items whose
+    expiration date is later than October 2008.
+
+<P>
+The format of the output file must be the same as that of the
+    input file.
+  
+</LI>
+</OL>
+</LI>
+</OL>
+
+<P>
+Use the three provided test files small.txt (5 items), medium.txt (11
+items) and large.txt (50 items).
+
+<P>
+This is an excellent project for practicing using Makefiles.  This
+project does not specify that a makefile is required to compile the
+program, but creating one would give you great practice creating them.
+
+<P>
+
+<H2><A NAME="SECTION00025000000000000000">
+<SPAN CLASS="arabic">5</SPAN> FileCopy (40 points)</A>
+</H2>
+
+<P>
+Checkout the <SPAN  CLASS="textbf">FileCopy</SPAN> project in the <SPAN  CLASS="textbf">lab1</SPAN> directory
+from your svn repository into your svn local workspace.  You should
+see a file named <TT>fileCopy.c</TT>.  Implement solutions to the
+following problem in that file.  This program will perform a function
+similar to that of the linux <SPAN  CLASS="textbf">cp</SPAN> command.  In particular, it
+will:
+
+<OL>
+<LI>Accept the name of a source file and the name of a
+  destination file from the console, as command line arguments.
+
+<P>
+For example, you might run the program like this:
+<PRE>
+&gt; ./fileCopy Beauty.txt BeautyCopy.txt
+</PRE>
+
+<P>
+If both file names are not specified when the program starts, it
+  will print an appropriate error message and quit.
+
+<P>
+</LI>
+<LI>Define a function <SPAN  CLASS="textbf">ReadLineFromFile</SPAN>.  This function
+  accepts two arguments a pointer to a source file opened in the
+  read mode and a buffer.  The function reads a line of text from
+  the file and stores the line into the buffer.  The function
+  returns the number of characters read.
+
+<P>
+</LI>
+<LI>Define a function <SPAN  CLASS="textbf">WriteLineToFile</SPAN>. This function
+  accepts three arguments a pointer to an output file opened in the
+  write mode, a buffer, and the number of characters to write.  The
+  function writes the specified number of characters from the buffer
+  to output file.
+
+<P>
+</LI>
+<LI>Use the functions described above to copy <TT>all</TT> of the
+  content of the source file to the destination file.  The contents of
+  the new file should be identical to the original.
+
+<P>
+Note: If the file sizes are different, then the contents are also
+  different.
+</LI>
+</OL>
+
+<P>
+You should assume that the input file will have no more than 50 lines
+and each line has no more than 512 characters.  Therefore, your buffer
+should be a static array that can store 512 characters.
+
+<P>
+Although a <SPAN  CLASS="textbf">Makefile</SPAN> is not required for this project, it
+might serve you well to begin practicing writing make files.  You can
+use the Makefile in the Power project as an example.  If you do, get
+rid of the <TT>-lm</TT> flag because it is not needed for this
+project.
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+<SPAN CLASS="arabic">3</SPAN> Turning It In</A>
+</H1>
+
+<P>
+This lab is due no later than 11:59 PM 08 December 2015.
+
+<P>
+You will receive credit for each project <SPAN  CLASS="textbf">only</SPAN> if it compiles
+and runs on the course linux distribution.
+
+<P>
+
+<OL>
+<LI>Study the document <A NAME="tex2html6"
+  HREF="../resources/svn.html">Using subversion to
+    checkout, add, and commit assignments</A>to
+  learn how to use svn from the linux command line environment.
+
+<P>
+</LI>
+<LI>You <SPAN  CLASS="textbf">must</SPAN> include your name in a comment at the top of
+  all files you submit.
+
+<P>
+</LI>
+<LI>Add any new files/directories you created to your repository.
+
+<P>
+</LI>
+<LI>Commit your solutions to each project to your repository with
+  appropriate commit messages.
+
+<P>
+</LI>
+<LI>Use the svn status command and/or point your webbrowser at
+  your svn repository to verify that you submitted your solutions.
+</LI>
+</OL>
+
+<P>
+Note: It is good practice to commit often.
+
+<P>
+Once the labs are graded, you can do an <SPAN  CLASS="textit">svn update</SPAN> to update
+your svn local workspace to get comments and feedback.
+
+<P>
+<BR><HR>
+<ADDRESS>
+J.P. Mellor
+2016-01-05
+</ADDRESS>
+</BODY>
+</HTML>

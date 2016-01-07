@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Lab 2 -- gdb and C Programming</TITLE>
+<META NAME="description" CONTENT="Lab 2 -- gdb and C Programming">
+<META NAME="keywords" CONTENT="csse332_lab2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="csse332_lab2.css">
+
+</HEAD>
+
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<P>
+<H1 ALIGN="CENTER">CSSE 332 - Operating Systems<br>Rose-Hulman Institute of Technology<br>Computer Science and Software Engineering Department</H1><H1 ALIGN="CENTER">Lab 2 -- gdb and C Programming</H1>
+
+<P>
+This and the remaining labs should be done in pairs - only
+<SPAN  CLASS="textbf">one</SPAN> lab should be submitted.
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+<SPAN CLASS="arabic">1</SPAN> Objectives</A>
+</H1>
+
+<P>
+Following completion of this lab you should be able to:
+
+<P>
+
+
+
+<UL>
+<LI>Write C programs using strings, string library functions,
+  string manipulation, and pointers.
+
+<P>
+</LI>
+<LI>Write C programs using files, file operations, structures,
+  functions, command line arguments, and pointers.
+
+<P>
+</LI>
+<LI>Dynamically allocate storage on the heap when needed and
+  reclaim such storage when no longer needed.
+
+<P>
+</LI>
+<LI>Use the GNU Debugger, gdb, to debug your code.
+</LI>
+</UL>
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+<SPAN CLASS="arabic">2</SPAN> Tasks</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00021000000000000000">
+<SPAN CLASS="arabic">1</SPAN> GNU Debugger</A>
+</H2>
+
+<P>
+Follow the instructions in the <A NAME="tex2html1"
+  HREF="../resources/gdbtutorial.html">gdb
+  tutorial</A> to familiarize yourself
+with using gdb to debug your code.  gdb is a convenient utility that
+you should use to diagnose and correct bugs in your code.
+
+<P>
+
+<H2><A NAME="SECTION00022000000000000000">
+<SPAN CLASS="arabic">2</SPAN> PigLatin (50 points)</A>
+</H2>
+
+<P>
+Checkout the <SPAN  CLASS="textbf">PigLatin</SPAN> project in the <SPAN  CLASS="textbf">lab2</SPAN> directory
+from your svn repository into your svn local workspace.
+
+<OL>
+<LI>You should see the following file listings:
+  <TT>pigLatin.c</TT> and <TT>tokenizer.c</TT>.
+
+<P>
+</LI>
+<LI>In this program you will demonstrate your understanding of
+  strings (character arrays), string library functions, string
+  manipulation and pointers.  Write a C program in the source file
+  <TT>pigLatin.c</TT> that encodes English language phrases into Pig
+  Latin.  Pig Latin is a code language often used for
+  amusement.  Although there are varying rules, this is how your
+  program should behave.  It should:
+  
+<OL>
+<LI>Prompt the user for a phrase or sentence (terminated with
+    the ENTER key) from the console (not a command line parameter).
+
+<P>
+</LI>
+<LI>Tokenize the input phrase/sentence into individual words.
+    Use the <TT>strtok</TT> function. See example in
+    <TT>tokenizer.c</TT> and the linux man pages for details. The
+    words in the phrase or sentence are separated by spaces.
+
+<P>
+</LI>
+<LI>Convert each word to Pig Latin and copy the converted word
+    to an output string.  To convert the word to Pig Latin, move the
+    first letter to the end of the word and add the letters
+    ``<SPAN  CLASS="textbf">ay</SPAN>'' to the end.  For example, ``This is my string
+    manipulation program'' will become ``hisTay siay ymay tringsay
+    anipulationmay rogrampay''.
+
+<P>
+</LI>
+<LI>When finished processing the input, print the output
+    string to the screen.
+  
+</LI>
+</OL>
+
+<P>
+You may assume the input string will not be longer than 128
+  characters; words in the input string are delimited by spaces; the
+  input string contains no punctuation; and, each word has two or
+  more characters.
+
+<P>
+</LI>
+<LI>Create a <SPAN  CLASS="textbf">Makefile</SPAN> for the PigLatin project that will
+  build your executable.  See
+  <A NAME="tex2html2"
+  HREF="../examples/maketutorial">maketutorial</A> for an
+  example.  Your <TT>Makefile</TT> should explicitly code the
+  dependencies and should only recompile those file that are
+  absolutely necessary.
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00023000000000000000">
+<SPAN CLASS="arabic">3</SPAN> InventoryUpdate (100 points)</A>
+</H2> 
+
+<P>
+Checkout the <SPAN  CLASS="textbf">InventoryUpdate</SPAN> project in the <SPAN  CLASS="textbf">lab2</SPAN>
+directory from your svn repository into your svn local workspace.
+
+<P>
+Write your solution for this assignment in source file
+<SPAN  CLASS="textbf">inventoryUpdate.c</SPAN>.
+
+<P>
+You will continue to use the Inventory structure you defined in
+<TT>inv.h</TT> in <A NAME="tex2html3"
+  HREF="csse332_lab1.html">Lab 1</A>.  Your
+program should:
+
+<OL>
+<LI>Accept two <SPAN  CLASS="textbf">command line</SPAN> arguments: input file name
+  and output file name.  If either argument is missing, the program
+  should display a helpful message and exit.  If the input file does
+  not exist, the program should notify the user and exit.  See
+  <A NAME="tex2html4"
+  HREF="csse332_lab1.html">Lab 1</A> for examples of using
+  command line arguments.
+
+<P>
+</LI>
+<LI>Dynamically allocate space for an array of 2 Inventory items.
+
+<P>
+Note: Use <SPAN  CLASS="textbf">malloc</SPAN> to allocate storage for the array.
+
+<P>
+</LI>
+<LI>Call a <SPAN  CLASS="textbf">PopulateArray</SPAN> function that you write. This
+  function should populate the array using data from the input file.
+  The function should:
+  
+<OL>
+<LI>Accept three arguments: 1) a pointer to the address of the
+    array (why?); 2) a pointer to the current size of the array; and
+    3) a pointer to open input file.
+
+<P>
+</LI>
+<LI>Read data from the file and uses it to populate the
+    array.
+
+<P>
+</LI>
+<LI>Double the size of the array whenever the array is not large
+    enough to accommodate the next inventory item.
+
+<P>
+</LI>
+<LI>Keep track of the number of valid entries in the array.  A
+    valid entry is an entry read from the input file.
+
+<P>
+</LI>
+<LI>Return the number of valid entries in the array and update
+    the size of the array.
+  
+</LI>
+</OL>
+
+<P>
+The format of the input file:
+<PRE>
+&lt;Item number&gt; &lt;space&gt; &lt;quantity&gt; &lt;space&gt; &lt;price&gt; &lt;space&gt; &lt;month/year&gt; &lt;new_line&gt;
+</PRE>
+
+<P>
+</LI>
+<LI>Call a <SPAN  CLASS="textbf">PrintInventory</SPAN> function that you write.  This
+  function should display the entire contents of the inventory
+  array. The function should accept two arguments: 1) the inventory
+  array; and 2) the number of valid entries.  The function's return
+  type should be <SPAN  CLASS="textit">void</SPAN>.  The inventory should be printed in
+  the following format:
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Item Number</TD>
+<TD ALIGN="RIGHT">Quantity</TD>
+<TD ALIGN="RIGHT">Price</TD>
+<TD ALIGN="LEFT">Expiration Date</TD>
+</TR>
+<TR><TD ALIGN="LEFT">10034</TD>
+<TD ALIGN="RIGHT">105</TD>
+<TD ALIGN="RIGHT">2.50</TD>
+<TD ALIGN="LEFT">5/2005</TD>
+</TR>
+<TR><TD ALIGN="LEFT">10035</TD>
+<TD ALIGN="RIGHT">15</TD>
+<TD ALIGN="RIGHT">12.50</TD>
+<TD ALIGN="LEFT">10/2007</TD>
+</TR>
+<TR><TD ALIGN="LEFT">10036</TD>
+<TD ALIGN="RIGHT">52</TD>
+<TD ALIGN="RIGHT">3.75</TD>
+<TD ALIGN="LEFT">2/2009</TD>
+</TR>
+</TABLE>
+
+<P>
+Note: items are separated by a tab character (''), not just
+  white space separated.
+
+<P>
+</LI>
+<LI>Call a <SPAN  CLASS="textbf">DeleteExpiredItems</SPAN> function that you write.
+  This function should remove all items from the array whose
+  expiration date is earlier than January 2005.  The function should
+  accept three arguments: 1) a pointer to the address of the array
+  (why?); 2) a pointer to the current size of the array; and 3) the
+  number of valid entries.  It should free any space that is no
+  longer needed by the array and update the size of the array
+  accordingly.  Its return value should be the number of unexpired
+  entries in the array.
+
+<P>
+Note: You'll find the malloc family of functions useful here.
+
+<P>
+</LI>
+<LI>Call the PrintInventory function described earlier to print
+  the updated inventory to the console.  There should be no expired
+  items in this list.
+
+<P>
+</LI>
+<LI>Call a <SPAN  CLASS="textbf">SaveInventory</SPAN> function you write.  This
+  function should write the contents of the array (the unexpired
+  items) to the output file.  The format of the data in the output
+  file should be the same as the input file.  This function should
+  accept three arguments: 1) the array; 2) the size of the array;
+  and 3) the output file.  The function's return type should be
+  <SPAN  CLASS="textit">void</SPAN>.
+
+<P>
+</LI>
+<LI>Create a <SPAN  CLASS="textbf">Makefile</SPAN> for the InventoryUpdate project
+  that will build your executable.
+
+<P>
+</LI>
+</OL>
+
+<P>
+Use the three provided test files small.txt (5 items), medium.txt (11
+items) and large.txt (50 items).
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+<SPAN CLASS="arabic">3</SPAN> Turning It In</A>
+</H1>
+
+<P>
+This lab is due no later than 11:59 PM 15 December 2015.
+
+<P>
+You will receive credit for each project <SPAN  CLASS="textbf">only</SPAN> if it compiles
+and runs on the course linux distribution.
+
+<P>
+
+<OL>
+<LI>Study the document <A NAME="tex2html5"
+  HREF="../resources/svn.html">Using subversion to
+    checkout, add, and commit assignments</A>to
+  learn how to use svn from the linux command line environment.
+
+<P>
+</LI>
+<LI>Only <SPAN  CLASS="textbf">one</SPAN> lab should be submitted by each
+  <SPAN  CLASS="textbf">pair</SPAN>.  You <SPAN  CLASS="textbf">must</SPAN> include both partner's names in a
+  comment at the top of all files you submit.
+
+<P>
+</LI>
+<LI>Add any new files/directories you created to your repository.
+
+<P>
+</LI>
+<LI>Commit your solutions to each project to your repository with
+  appropriate commit messages.
+
+<P>
+</LI>
+<LI>Use the svn status command and/or point your webbrowser at
+  your svn repository to verify that you submitted your solutions.
+</LI>
+</OL>
+
+<P>
+Note: It is good practice to commit often.
+
+<P>
+Once the labs are graded, you can do an <SPAN  CLASS="textit">svn update</SPAN> to update
+your svn local workspace to get comments and feedback.
+
+<P>
+<BR><HR>
+<ADDRESS>
+J.P. Mellor
+2016-01-05
+</ADDRESS>
+</BODY>
+</HTML>
