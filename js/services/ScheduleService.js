@@ -6,8 +6,11 @@ app.service('ScheduleService', function ($http) {
             self.className = "CSSE 490";
             //Now included in the schedule JSON
             self.scheduleComponentNames = data.scheduleComponentNames;
+            self.homework = data.homework;
+            //TODO: add homework
         })
     }
+
     //part of the schedule JSON now
     //self.scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"];
 })

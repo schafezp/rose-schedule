@@ -10,6 +10,7 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleCompo
     returnSession.sessionWeekDay = sessionWeekDay;
     returnSession.sessionDate = sessionDate;
     returnSession.week = week;
+
     //todo. 
     returnSession.scheduleComponents = [];
     for (var i =0; i <scheduleComponentNames.length; i++) {
@@ -54,6 +55,7 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleCompo
 function Schedule(configObj) {
     // update internal values
     var returnSchedule = {};
+    returnSchedule.homework = configObj.homework;
     //didn't want to type long things everywhere
     var cnames = configObj.scheduleComponentNames;
     returnSchedule.scheduleComponentNames = cnames;
@@ -73,7 +75,7 @@ function Schedule(configObj) {
     var startDateDate = new Date(configObj.startDate);
     // sort list just in case people entered dates in the wrong order.
     if (weekdayNumberToWord[startDateDate.getDay()] === undefined) {
-        //console.log("Start date is not valid")
+        //cons`ole.log("Start date is not valid")
     } else {
         //console.log("Start date is valid")
     }

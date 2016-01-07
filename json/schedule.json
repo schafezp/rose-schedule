@@ -1,4 +1,14 @@
 {
+  "homework": [
+    {
+      "session": "1",
+      "content": "homework-1.html"
+    },
+    {
+      "session": "2",
+      "content": "homework-2.html"
+    }
+  ],
   "scheduleComponentNames": [
     "Due",
     "Topics",
@@ -7,7 +17,7 @@
     "Programs",
     "Whatever"
   ],
-  "startDate": "2015-11-30T06:00:00.000Z",
+  "startDate": "2015-11-30T05:00:00.000Z",
   "numberOfSessions": 30,
   "sessions": [
     {

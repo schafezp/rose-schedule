@@ -14,8 +14,13 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/schedule.html',
             controller: 'ScheduleCtrl'
         })
+        .when('/homework', {
+            templateUrl: 'views/homework.html',
+            controller: 'HomeworkCtrl'
+        })
         .otherwise({
             redirectTo: '/home'
+
         })
 })
 //angular.module('schedule',['smart-table']);

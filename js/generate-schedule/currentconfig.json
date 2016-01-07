@@ -1,1 +1,26 @@
-{"sessionDays":"MWR","startDate":"2015-11-30T06:00:00.000Z","startWeekNumber":1,"breakStartDate":"2015-12-21T06:00:00.000Z","resumeDate":"2016-01-04T06:00:00.000Z","numberOfSessions":30,"scheduleComponentNames":["Due","Topics","Resources","Reading","Programs","Whatever"]}
+{
+  "sessionDays": "MWR",
+  "startDate": "2015-11-30T05:00:00.000Z",
+  "startWeekNumber": 1,
+  "breakStartDate": "2015-12-21T05:00:00.000Z",
+  "resumeDate": "2016-01-04T05:00:00.000Z",
+  "numberOfSessions": 30,
+  "scheduleComponentNames": [
+    "Due",
+    "Topics",
+    "Resources",
+    "Reading",
+    "Programs",
+    "Whatever"
+  ],
+  "homework": [
+    {
+      "session": "1",
+      "content": "homework-1.html"
+    },
+    {
+      "session": "2",
+      "content": "homework-2.html"
+    }
+  ]
+}
