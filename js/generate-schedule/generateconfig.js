@@ -103,7 +103,7 @@ var courseComponents = [];
 //ADD ANY NEW COURSE COMPONENTS HERE ---
 courseComponents = courseComponents.concat(homework, labs)
 //----
-var scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs", "Whatever"]
+var scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"]
 var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30, scheduleComponentNames, courseComponents);
 
 var writeToCurrentConfig = function (configObject) {
