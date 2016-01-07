@@ -1,0 +1,163 @@
+<P>
+<H1 ALIGN="CENTER">CSSE 332 - Operating Systems<br>Rose-Hulman Institute of Technology<br>Computer Science and Software
+    Engineering Department</H1><H1 ALIGN="CENTER">Homework 1</H1>
+
+<P>
+    This assignment is due 07 December 2015 no later than 11:59 PM.
+
+<P>
+
+    <OL>
+        <LI>Complete the Introduction to LINUX and C Programming tutorial
+            that is linked from the <A NAME="tex2html1"
+                                       HREF="../resources/resources.html">Resources
+                page</A>, if you have not yet completed
+            it.
+
+<P>
+    Note: There are two versions of this tutorial. Be sure to complete
+    the <SPAN CLASS="textbf">appropriate</SPAN> one.
+
+<P>
+    </LI>
+    <LI>If you have not yet installed Ubuntu or another LINUX
+        distribution, instructions for installing Ubuntu are available
+        <A NAME="tex2html2"
+           HREF="http://www.rose-hulman.edu/class/csse/resources/Ubuntu/index.html">here</A>.
+        You should begin your installation as soon as possible. Your
+        installation should be completed no later than the first Wednesday
+        lab period.
+
+<P>
+    </LI>
+    <LI>You have now gone through the steps of using Emacs to edit C
+        program, working with the LINUX command line environment and
+        compiling C programs from the command line. Do the following as a
+        self-test. If you have problems doing this, the instructor and TAs
+        are available to help you.
+
+<P>
+    During the next class your instructor may ask that you demonstrate
+    that you have completed this assignment. For the purpose of this
+    assignment $LINUX_HOST refers to either <SPAN CLASS="textbf">your laptop</SPAN>, if
+    you have linux installed, or
+    <SPAN CLASS="textbf">{abacus/sliderule}.csse.rose-hulman.edu</SPAN>.
+
+<P>
+
+    <OL>
+        <LI>Login to $LINUX_HOST. Use SecureCRT to access abacus or
+            sliderule if have not yet installed linux on your laptop.
+
+<P>
+    </LI>
+    <LI>Create a directory called <SPAN CLASS="textbf">HW01</SPAN>.
+
+<P>
+    </LI>
+    <LI>Using Emacs, create in <SPAN CLASS="textbf">HW01</SPAN> a C program file called
+        <SPAN CLASS="textbf">MyFirstCProgram.c</SPAN>.
+
+<P>
+    </LI>
+    <LI>Edit MyFirstCProgram.c so that it prints the string ``This
+        is my first Operating Systems C program.'' to the console. Look
+        at the <SPAN CLASS="textbf">HelloWorld.c</SPAN> program for an example on how to do
+        this.
+
+<P>
+    </LI>
+    <LI>Save the file.
+
+<P>
+    </LI>
+    <LI>Use <SPAN CLASS="textbf">ls</SPAN> to ensure that a file called
+        MyFirstCProgram.c has been created.
+
+<P>
+    </LI>
+    <LI>We will use the <A NAME="tex2html3"
+                           HREF="http://google.github.io/styleguide/cppguide.html">Google C++
+        style</A>. Use
+        <A NAME="tex2html4"
+           HREF="../resources/cpplint.py"><SPAN CLASS="textbf">cpplint.py</SPAN></A>
+        (this version has a couple of small local modifications to make it
+        work better for C code) to make sure your code conforms to a
+        reasonable style. You might need to make <TT>cpplint.py</TT>
+        executable (e.g. by running ``<TT>chmod a+x cpplint.py</TT>'').
+        You can check <TT>foo.c</TT> by running
+        ``<TT><SPAN CLASS="MATH"><IMG
+                WIDTH="19" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+                SRC="csse332_hw01-img1.png"
+                ALT="$\sim$"></SPAN>/cpplint.py foo.c</TT>'' assuming <TT>cppylint.py</TT>
+        is in your home directory. If <TT>cpplint.py</TT> is in a
+        different directory, you'll need to include the path to it. If
+        it's in the current directory the path to it is
+        ``<TT>./cppylint.py</TT>.'' Note: you can place
+        <A NAME="tex2html5"
+           HREF="../resources/CPPLINT.cfg">CPPLINT.cfg</A> in the
+        root of your directory tree to automatically load local
+        configuration options. This config file will eliminate the
+        copyright warning.
+
+<P>
+    </LI>
+    <LI>Compile MyFirstProgram.c using <SPAN CLASS="textbf">gcc</SPAN> with and without
+        the ``-o'' flag and create the executables ``a.out'' and
+        ``myfirstprog''.
+
+<P>
+    </LI>
+    <LI>Run each executable.
+
+<P>
+    </LI>
+<LI>When done, logout of $LINUX_HOST.
+
+</LI>
+</OL>
+
+<P>
+    </LI>
+    <LI>Submission instructions: You should submit only after you have
+        initially checked out data from your svn repository (Follow
+        <A NAME="tex2html6"
+           HREF="../resources/svn.html">these instructions</A> to
+        checkout your svn repository).
+
+<P>
+
+    <OL>
+        <LI>Log back into to $LINUX_HOST and <SPAN CLASS="textbf">cd</SPAN> to the
+            <SPAN CLASS="textbf">HW01</SPAN> directory.
+
+<P>
+    </LI>
+    <LI>Use the <SPAN CLASS="textbf">mv</SPAN> command to your files to the
+        <SPAN CLASS="textbf">HW01</SPAN> directory of your svn local workspace (that is, the
+        directory that appeared in your directory tree after you checkout
+        data from your svn repository).
+
+<P>
+<PRE>
+&gt; mv MyFirstCProgram.c a.out myfirstprog &lt;svn local workspace&gt;/HW01
+</PRE>
+
+<P>
+    </LI>
+    <LI>Make sure the <SPAN CLASS="textbf">HW01</SPAN> directory of your svn local
+        workspace contains the executables <SPAN CLASS="textbf">a.out</SPAN> and
+        <SPAN CLASS="textbf">myfirstprog</SPAN> as well as <SPAN CLASS="textbf">MyFirstCProgram.c</SPAN>.
+
+<P>
+    Note: Normally you should only include source files in your
+    repository. Unless specifically requested <SPAN CLASS="textbf">do not</SPAN> commit
+    executable files to your svn repositories.
+
+<P>
+    </LI>
+<LI>Now <SPAN CLASS="textbf">add</SPAN> and <SPAN CLASS="textbf">commit</SPAN> the files to your svn
+    repository.
+
+</LI>
+</OL>

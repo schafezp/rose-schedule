@@ -16,11 +16,21 @@ function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeD
 var homework = [
     {
         session: "1",
-        content: "homework-1.html"
+        name: "Homework 1",
+        number: 1,
+        sessionDue: 3,
+        url: "homework-1.html",
+        solution: '',
+        sample: ''
     },
     {
         session: "2",
-        content: "homework-2.html"
+        name: "Homework 2",
+        number: 2,
+        sessionDue: 4,
+        url: "homework-2.html",
+        solution: '',
+        sample: '',
     }
 ];
 
