@@ -1,4 +1,4 @@
-app.service('ScheduleService', function ($http) {
+app.service('ScheduleService', function ($http, $log) {
     var self = this;
     self.saveSessions = function () {
         $http.get('json/schedule.json').success (function (data) {
@@ -6,10 +6,23 @@ app.service('ScheduleService', function ($http) {
             self.className = "CSSE 490";
             //Now included in the schedule JSON
             self.scheduleComponentNames = data.scheduleComponentNames;
-            self.homework = data.homework;
-            //TODO: add homework
+            self.courseComponents = data.courseComponents;
+            self.homework = [];
+            self.lab = [];
+            $log.log(self.courseComponents)
+            self.courseComponents.forEach(function (element, index, array) {
+                if (element.type == "homework") {
+                    self.homework.push(element);
+                } else if (element.type == "lab") {
+                    self.lab.push(element);
+                }
+            });
         })
+
     }
+    var res = [];
+
+
     self.getSessionDate = function (sessionNumber) {
         //return self.scheduleSessions;
         var res = []

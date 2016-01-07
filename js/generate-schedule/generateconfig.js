@@ -1,5 +1,5 @@
 var fs = require('fs');
-function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeDate, numberOfSessions, scheduleComponentNames, homework) {
+function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeDate, numberOfSessions, scheduleComponentNames, courseComponents) {
     var returnConfig = {};
     returnConfig.sessionDays = sessionDays;
     returnConfig.startDate = new Date(startDate);
@@ -8,7 +8,7 @@ function Config(sessionDays, startDate, startWeekNumber, breakStartDate, resumeD
     returnConfig.resumeDate = new Date(resumeDate);
     returnConfig.numberOfSessions = numberOfSessions;
     returnConfig.scheduleComponentNames = scheduleComponentNames;
-    returnConfig.homework = homework;
+    returnConfig.courseComponents = courseComponents;
     return returnConfig;
 }
 
@@ -38,7 +38,8 @@ var homework = [
 
 var courseComponents = [];
 courseComponents = courseComponents.concat(homework)
-var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30, ["Due", "Topics", "Resources", "Reading", "Programs", "Whatever"], courseComponents);
+var scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs", "Whatever"]
+var updatedConfig = new Config("MWR", "11/30/2015", 1, "12/21/2015", "1/4/2016", 30, scheduleComponentNames, courseComponents);
 
 var writeToCurrentConfig = function (configObject) {
     fs.writeFile("currentconfig.json", JSON.stringify(configObject), function (err) {

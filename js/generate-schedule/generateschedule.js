@@ -10,8 +10,7 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleCompo
     returnSession.sessionWeekDay = sessionWeekDay;
     returnSession.sessionDate = sessionDate;
     returnSession.week = week;
-    returnSession.courseComponents = courseComponents;
-    //todo. 
+
     returnSession.scheduleComponents = [];
     for (var i =0; i <scheduleComponentNames.length; i++) {
         returnSession.scheduleComponents.push(writeScheduleComponent(scheduleComponentNames[i], courseComponents, sessionNumber));
@@ -55,7 +54,7 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleCompo
 function Schedule(configObj) {
     // update internal values
     var returnSchedule = {};
-    returnSchedule.homework = configObj.homework;
+    returnSchedule.courseComponents = configObj.courseComponents
     //didn't want to type long things everywhere
     var cnames = configObj.scheduleComponentNames;
     returnSchedule.scheduleComponentNames = cnames;
@@ -83,7 +82,7 @@ function Schedule(configObj) {
     currentWeekNumber = configObj.startWeekNumber;
     returnSchedule.sessions = [];
     for (var dayOfSession = 1; dayOfSession <= configObj.numberOfSessions; dayOfSession++) {
-        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber, cnames, configObj.homework);
+        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber, cnames, configObj.courseComponents);
         returnSchedule.sessions.push(currentSession);
         var dateObj = getNextSessionDate(currentDay, configObj.sessionDays, currentWeekNumber, configObj.breakStartDate, configObj.resumeDate);
         //console.log(dateObj)
@@ -106,6 +105,7 @@ function writeScheduleComponent(componentCategory, courseComponents, sessionNumb
         case "Due":
             var dueLinks = [];
             //TODO: May create problems switching between base 0 and base 1 indexing
+
             for (var i = 0; i < courseComponents.length; i++) {
                 var component = courseComponents[i];
                 //dueLinks
