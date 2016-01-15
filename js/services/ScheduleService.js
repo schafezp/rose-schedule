@@ -9,20 +9,16 @@ app.service('ScheduleService', function ($http, $log) {
             self.courseComponents = data.courseComponents;
             self.homework = [];
             self.labs = [];
-            $log.log(self.courseComponents)
             self.courseComponents.forEach(function (element, index, array) {
                 if (element.type == "homework") {
                     self.homework.push(element);
                 } else if (element.type == "lab") {
                     self.labs.push(element);
                 }
-            });
+            });;
         })
 
     }
-    var res = [];
-
-
     self.getSessionDate = function (sessionNumber) {
         //return self.scheduleSessions;
         var res = []
