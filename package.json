@@ -1,0 +1,31 @@
+{
+  "name": "rose-schedule",
+  "version": "1.0.0",
+  "description": "Joint repo for Winter CSSE490-01 project 2   Project specs can be found [here](www.rose-hulman.edu/class/csse/csse490WebServicesDev/201620/Assignments/Labs/lab2.html)",
+  "main": "index.js",
+  "dependencies": {
+    "angular-mocks": "^1.4.8",
+    "angular-smart-table": "^2.1.6",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schafezp/rose-schedule.git"
+  },
+  "keywords": [
+    "rose",
+    "rose-hulman",
+    "angular"
+  ],
+  "author": "schafezp, drongla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schafezp/rose-schedule/issues"
+  },
+  "homepage": "https://github.com/schafezp/rose-schedule#readme"
+}
