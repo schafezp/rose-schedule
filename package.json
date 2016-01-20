@@ -7,7 +7,8 @@
     "angular": "^1.4.8",
     "angular-route": "^1.4.8",
     "angular-sanitize": "^1.4.8",
-    "angular-smart-table": "^2.1.6"
+    "angular-smart-table": "^2.1.6",
+    "express": "^4.13.3"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
@@ -24,7 +25,6 @@
     "url": "git+https://github.com/schafezp/rose-schedule.git"
   },
   "author": "Zachary Schafer, Luke Drong",
-
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/schafezp/rose-schedule/issues"
