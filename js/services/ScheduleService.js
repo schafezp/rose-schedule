@@ -1,4 +1,4 @@
-app.service('ScheduleService', function ($http, $log) {
+app.service('ScheduleService', function ($http) {
     var self = this;
     self.saveSessions = function () {
         $http.get('json/schedule.json').success (function (data) {
@@ -9,6 +9,7 @@ app.service('ScheduleService', function ($http, $log) {
             self.courseComponents = data.courseComponents;
             self.homework = [];
             self.labs = [];
+
             self.courseComponents.forEach(function (element, index, array) {
                 if (element.type == "homework") {
                     self.homework.push(element);
