@@ -4,7 +4,7 @@ app.controller('HomeworkDetailCtrl', ['$scope', '$routeParams', '$sce', '$http',
     //TODO: This should be extracted into some Utilities module
 
     $scope.pathFromUrl = function (url) {
-        return '/content/homework/' + url;
+        return 'src/content/homework/' + url;
     }
     $scope.to_trusted = function (html_code) {
         return $sce.trustAsHtml(html_code);
