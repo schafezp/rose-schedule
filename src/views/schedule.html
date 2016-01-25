@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/schedule.css">
+<link rel="stylesheet" type="text/css" href="src/css/schedule.css">
 <div>
     <!--TODO: If you start app then immedietely switch to this page it shows trash for a second-->
     <div class="container-fluid" ng-hide="typeof(scheduleSessions) != undefined">
@@ -24,7 +24,7 @@
             <span class="glyphicon glyphicon-arrow-up"></span>
         </button>
         -->
-        <a href="#/home" title="">Go Back To Home</a>
+        <a href="/home" title="">Go Back To Home</a>
 
         <p>Quick Jump to Session:
 
@@ -32,7 +32,7 @@
 
             <a class="btn btn-default btn-xs" ng-click="gotoID('session' + schedule.sessionNumber)">{{schedule.sessionNumber}}</a>
         </div>
-        pp
+
         </p>
         <table st-table="rowCollection" class="table table-striped">
             <thead>

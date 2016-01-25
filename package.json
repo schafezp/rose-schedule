@@ -8,6 +8,7 @@
     "angular-route": "^1.4.8",
     "angular-sanitize": "^1.4.8",
     "angular-smart-table": "^2.1.6",
+    "bootstrap": "^3.3.6",
     "express": "^4.13.3"
   },
   "devDependencies": {
