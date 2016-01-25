@@ -17,6 +17,9 @@ module.exports = function(config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/angular-smart-table/dist/smart-table.js',
+      'node_modules/angular-sanitize/angular-sanitize.js',
+      'node_modules/angular-route/angular-route.js',
       'src/js/modules/app.js',
       'src/js/controllers/*',
       'src/js/services/*',

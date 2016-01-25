@@ -110,7 +110,7 @@ function writeScheduleComponent(componentCategory, courseComponents, sessionNumb
                 var component = courseComponents[i];
                 //dueLinks
                 if (component.sessionDue == sessionNumber) {
-                    dueLinks.push("<a href='#/" + component.type + "/" + component.url + "'>" + component.name + "</a>")
+                    dueLinks.push("<a href='/" + component.type + "/" + component.url + "'>" + component.name + "</a>")
                 }
 
             }

@@ -184,8 +184,8 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/homework/homework-1.html'>Homework 1</a>",
-            "<a href='#/lab/lab-1.html'>Lab 1</a>"
+            "<a href='/homework/homework-1.html'>Homework 1</a>",
+            "<a href='/lab/lab-1.html'>Lab 1</a>"
           ]
         },
         {
@@ -229,7 +229,7 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/homework/homework-2.html'>Homework 2</a>"
+            "<a href='/homework/homework-2.html'>Homework 2</a>"
           ]
         },
         {
@@ -315,7 +315,7 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/lab/lab-2.html'>Lab 2</a>"
+            "<a href='/lab/lab-2.html'>Lab 2</a>"
           ]
         },
         {
@@ -359,7 +359,7 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/homework/homework-3.html'>Homework 3</a>"
+            "<a href='/homework/homework-3.html'>Homework 3</a>"
           ]
         },
         {
@@ -445,7 +445,7 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/lab/lab-3.html'>Lab 3</a>"
+            "<a href='/lab/lab-3.html'>Lab 3</a>"
           ]
         },
         {
@@ -489,7 +489,7 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/homework/homework-4.html'>Homework 4</a>"
+            "<a href='/homework/homework-4.html'>Homework 4</a>"
           ]
         },
         {
@@ -575,7 +575,7 @@
         {
           "name": "Due",
           "values": [
-            "<a href='#/lab/lab-4.html'>Lab 4</a>"
+            "<a href='/lab/lab-4.html'>Lab 4</a>"
           ]
         },
         {
