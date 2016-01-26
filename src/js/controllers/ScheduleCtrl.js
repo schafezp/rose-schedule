@@ -1,4 +1,4 @@
-app.controller('ScheduleCtrl', ['$scope', '$sce', '$http', '$location', '$anchorScroll', 'ScheduleService', function ($scope, $sce, $http, $location, $anchorScroll, ScheduleService) {
+app.controller('ScheduleCtrl', ['$scope', '$sce', '$http', '$location', '$anchorScroll', 'ScheduleService','$log', function ($scope, $sce, $http, $location, $anchorScroll, ScheduleService,$log) {
     /*
      This method allows for html to be injected into an html page to be interpreted as html. This allows for links to be interpreted from raw html.
      Solution found here: http://stackoverflow.com/questions/19415394/with-ng-bind-html-unsafe-removed-how-do-i-inject-html
@@ -17,9 +17,17 @@ app.controller('ScheduleCtrl', ['$scope', '$sce', '$http', '$location', '$anchor
     //});
 
     //ScheduleService.saveSessions();
+
     $scope.scheduleSessions = ScheduleService.scheduleSessions;
     $scope.scheduleComponentNames = ScheduleService.scheduleComponentNames;
     $scope.className = ScheduleService.className;
+    $log.log('className');
+    $log.log(JSON.stringify($scope.className));
+    $log.log('scheduleSessions');
+    $log.log(JSON.stringify($scope.scheduleSessions));
+    $log.log('scheduleComponentNames');
+    $log.log(JSON.stringify($scope.scheduleComponentNames ));
+
     /*Hey, Zach! Here's some differences between Generated schedule (pasted here) and example schedule:
      generated schedule starts like this:
      {"startDate":"2015-11-30T05:00:00.000Z","numberOfSessions":30,"sessions":[stuff below]...
