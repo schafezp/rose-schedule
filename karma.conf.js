@@ -23,6 +23,7 @@ module.exports = function(config) {
       'src/js/modules/app.js',
       'src/js/controllers/*',
       'src/js/services/*',
+      'src/js/filters/*',
       'tests/*Spec.js'
     ],
 

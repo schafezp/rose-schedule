@@ -3,17 +3,17 @@ describe('Unit: ScheduleController',function(){
     var ctrl,scope, scheduleServiceFake;
     beforeEach(inject(function($controller, $rootScope){
         scope = $rootScope.$new();
-        //I do not think this is how we are supposed to do this...
+
         scheduleServiceFake = {
             className: "CSSE 490",
-            scheduleComponentNames: [
+            componentNames: [
                 "Due",
                 "Topics",
                 "Resources",
                 "Reading",
                 "Programs"
             ],
-            scheduleSessions: [
+            sessions: [
                 {
                     sessionNumber: 1,
                     sessionWeekDay: "Monday",
@@ -65,8 +65,8 @@ describe('Unit: ScheduleController',function(){
     }));
     describe('ScheduleCtrl',function(){
         it('should have access to data on scope from scheduleService',function(){
-            expect(scope.scheduleSessions).toBeDefined();
-            expect(scope.scheduleComponentNames).toBeDefined();
+            expect(scope.sessions).toBeDefined();
+            expect(scope.componentNames).toBeDefined();
             expect(scope.className).toBeDefined();
         });
     });
