@@ -19,7 +19,7 @@ app.controller('ScheduleCtrl', ['$scope', '$sce', '$http', '$location', '$anchor
     //ScheduleService.saveSessions();
 
     $scope.sessions = ScheduleService.sessions;
-    $scope.scheduleComponentNames = ScheduleService.scheduleComponentNames;
+    $scope.componentNames = ScheduleService.componentNames;
     $scope.className = ScheduleService.className;
 
     /*Hey, Zach! Here's some differences between Generated schedule (pasted here) and example schedule:

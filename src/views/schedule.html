@@ -30,7 +30,7 @@
 
         <div ng-repeat="session in sessions" class="btn-group">
 
-            <a class="btn btn-default btn-xs" ng-click="gotoID('session' + sessions.sessionNumber)">{{session.sessionNumber}}</a>
+            <a class="btn btn-default btn-xs" ng-click="gotoID('session' + session.sessionNumber)">{{session.sessionNumber}}</a>
         </div>
 
         </p>
@@ -39,7 +39,7 @@
             <tr>
                 <th class="text-center">week</th>
                 <th class="text-center">session</th>
-                <th ng-repeat="component in scheduleComponentNames" class="text-center">
+                <th ng-repeat="component in componentNames" class="text-center">
                     {{ component}}
                 </th>
             </tr>

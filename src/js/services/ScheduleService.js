@@ -1,11 +1,13 @@
-app.service('ScheduleService', function ($http) {
+app.service('ScheduleService', function ($http,$log) {
     var self = this;
     self.saveSessions = function () {
         $http.get('src/json/schedule.json').success (function (data) {
             self.sessions = data.sessions;
             self.className = "CSSE 490";
             //Now included in the schedule JSON
-            self.scheduleComponentNames = data.scheduleComponentNames;
+
+            self.componentNames = data.scheduleComponentNames;
+
             self.courseComponents = data.courseComponents;
             self.homework = [];
             self.labs = [];
