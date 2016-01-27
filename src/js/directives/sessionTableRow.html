@@ -7,7 +7,7 @@
         {{session.sessionDate}}
     </p>
 </td>
-<td ng-repeat="componentName in components">
+<td ng-repeat="componentName in scheduleComponentNames">
     <div ng-repeat="component in session.scheduleComponents">
         <ul ng-show="component.name == componentName">
             <li ng-repeat="value in component.values">

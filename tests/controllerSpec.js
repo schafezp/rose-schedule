@@ -5,6 +5,7 @@ describe('Unit: ScheduleController',function(){
         scope = $rootScope.$new();
         //I do not think this is how we are supposed to do this...
         scheduleServiceFake = {
+            className: "CSSE 490",
             scheduleComponentNames: [
                 "Due",
                 "Topics",
@@ -63,8 +64,10 @@ describe('Unit: ScheduleController',function(){
         });
     }));
     describe('ScheduleCtrl',function(){
-        it('Should initialize it\'s class name',function(){
+        it('should have access to data on scope from scheduleService',function(){
             expect(scope.scheduleSessions).toBeDefined();
+            expect(scope.scheduleComponentNames).toBeDefined();
+            expect(scope.className).toBeDefined();
         });
     });
 });

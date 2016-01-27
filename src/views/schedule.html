@@ -28,9 +28,9 @@
 
         <p>Quick Jump to Session:
 
-        <div ng-repeat="schedule in scheduleSessions" class="btn-group">
+        <div ng-repeat="session in sessions" class="btn-group">
 
-            <a class="btn btn-default btn-xs" ng-click="gotoID('session' + schedule.sessionNumber)">{{schedule.sessionNumber}}</a>
+            <a class="btn btn-default btn-xs" ng-click="gotoID('session' + sessions.sessionNumber)">{{session.sessionNumber}}</a>
         </div>
 
         </p>
@@ -45,27 +45,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="schedule in scheduleSessions">
-                <td class="text-center">{{schedule.week}}</td>
-                <td>
-                    <p class="text-center">
-                        <a id="session{{schedule.sessionNumber}}" class="a-unstyled"> {{schedule.sessionNumber}}</a>
-                        <br/>
-                        {{schedule.sessionDate}}
-                    </p>
-                </td>
-                <td ng-repeat="componentName in scheduleComponentNames">
-                    <div ng-repeat="component in schedule.scheduleComponents">
-                        <ul ng-show="component.name == componentName">
-                            <li ng-repeat="value in component.values">
-                                <div ng-bind-html="to_trusted(value)"></div>
-                            </li>
-                        </ul>
-                    </div>
-                    {{schedule.name}}
-                    {{component}}
-
-                </td>
+            <tr student-table-row ng-repeat="session in sessions" >
             </tr>
             </tbody>
         </table>
