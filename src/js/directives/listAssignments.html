@@ -1,0 +1,31 @@
+<table st-table="rowCollection" class="table table-striped">
+    <thead>
+    <tr>
+        <th>{{assignmentType}}assignment</th>
+        <th>Topic</th>
+        <th>Due</th>
+    </tr>
+    <tr ng-repeat="ass in assignments">
+        <td>
+            <p class="text-center">
+                {{ass.number}}
+            </p>
+        </td>
+        <td>
+            <p class="text-center">
+                <a href="{{assignmentType}}/{{ass.url}}">{{ass.name}}</a>
+            </p>
+        </td>
+        <td><p class="text-center">
+
+            {{getSessionDate(ass.session)}}
+        </p></td>
+        <!--<td>-->
+            <!--<p>-->
+
+            <!--</p>-->
+        <!--</td>-->
+    </tr>
+    </thead>
+</table>
+>

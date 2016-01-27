@@ -1,4 +1,4 @@
-app.service('ScheduleService', function ($http,$log) {
+app.service('ScheduleService', function ($http) {
     var self = this;
     self.saveSessions = function () {
         $http.get('src/json/schedule.json').success (function (data) {
@@ -18,14 +18,14 @@ app.service('ScheduleService', function ($http,$log) {
                 } else if (element.type == "lab") {
                     self.labs.push(element);
                 }
-            });;
+            });
         })
 
-    }
+    };
     self.getSessionDate = function (sessionNumber) {
         //return self.scheduleSessions;
-        var res = []
-        self.scheduleSessions.forEach(function (element, index, array) {
+        var res = [];
+        self.sessions.forEach(function (element, index, array) {
                 //res.push(element.sessionDate);
                 //res.push(element.sessionNumber);
                 if (element.sessionNumber == sessionNumber) {
@@ -34,11 +34,11 @@ app.service('ScheduleService', function ($http,$log) {
                     //res.push(element.sessionDate);
                 }
             }
-        )
+        );
         return res[0];
-    }
+    };
 
     //part of the schedule JSON now
     //self.scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"];
-})
+});
 

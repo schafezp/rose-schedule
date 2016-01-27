@@ -1,39 +1,39 @@
 <img class="container">
 <h2>Homework Page {{className}}</h2>
 <a href="/home" title="">Go Home</a>
+<list-assignments assignments="homework" assignmentType="homework"></list-assignments>
+<!--TODO: currently solutions are not displayed as a col, but it should be generated from data model-->
+<!--<table st-table="rowCollection" class="table table-striped">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<th>Assignment</th>-->
+        <!--<th>Problems</th>-->
+        <!--<th>Due</th>-->
+        <!--<th>Solutions</th>-->
+    <!--</tr>-->
+    <!--<tr ng-repeat="hw in homework">-->
+        <!--<td>-->
+            <!--<p class="text-center">-->
+                <!--{{hw.number}}-->
+            <!--</p>-->
+        <!--</td>-->
+        <!--<td>-->
+            <!--<p class="text-center">-->
+                <!--<a href="/homework/{{hw.url}}">{{hw.name}}</a>-->
+            <!--</p>-->
+        <!--</td>-->
+        <!--<td><p class="text-center">-->
 
-<!--TODO: make this display homework from the scope homework object-->
-<table st-table="rowCollection" class="table table-striped">
-    <thead>
-    <tr>
-        <th>Assignment</th>
-        <th>Problems</th>
-        <th>Due</th>
-        <th>Solutions</th>
-    </tr>
-    <tr ng-repeat="hw in homework">
-        <td>
-            <p class="text-center">
-                {{hw.number}}
-            </p>
-        </td>
-        <td>
-            <p class="text-center">
-                <a href="/homework/{{hw.url}}">{{hw.name}}</a>
-            </p>
-        </td>
-        <td><p class="text-center">
+            <!--{{getSessionDate(hw.session)}}-->
+        <!--</p></td>-->
+        <!--<td>-->
+            <!--<p>-->
 
-            {{getSessionDate(hw.session)}}
-        </p></td>
-        <td>
-            <p>
-
-            </p>
-        </td>
-    </tr>
-    </thead>
-</table>
+            <!--</p>-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--</thead>-->
+<!--</table>-->
 <p></p>
 
 
