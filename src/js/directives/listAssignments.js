@@ -6,7 +6,7 @@ app.directive('listAssignments', ['ScheduleService',function(ScheduleService)
             assignments: '=',
             assignmenttype: '@'
         },
-        templateUrl: 'src/js/directives/listAssignments.html',
+        templateUrl: 'src/views/listAssignments.html',
         link: function (scope, element, attrs){
             scope.getSessionDate = ScheduleService.getSessionDate;
             scope.assignmentType = attrs.$attr;
