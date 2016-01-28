@@ -2,7 +2,9 @@ app.service('ScheduleService', function ($http) {
     var self = this;
     self.saveSessions = function () {
         $http.get('src/json/schedule.json').success (function (data) {
-            self.sessions = data.sessions;
+
+            self.schedule = data;
+            self.sessions = self.schedule.sessions;
             self.className = "CSSE 490";
             //Now included in the schedule JSON
 

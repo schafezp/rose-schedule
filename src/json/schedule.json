@@ -90,6 +90,7 @@
   ],
   "startDate": "2015-11-30T05:00:00.000Z",
   "numberOfSessions": 30,
+  "className": "CSSE 490",
   "sessions": [
     {
       "sessionNumber": 1,

@@ -6,6 +6,6 @@ app.directive('studentTableRow', function()
         //    session: '=',
         //    components: '='
         //},
-    templateUrl: 'src/js/directives/sessionTableRow.html'
+    templateUrl: 'src/views/sessionTableRow.html'
   };
 });

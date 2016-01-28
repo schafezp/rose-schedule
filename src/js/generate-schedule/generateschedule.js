@@ -12,6 +12,7 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleCompo
     returnSession.week = week;
 
     returnSession.scheduleComponents = [];
+
     for (var i =0; i <scheduleComponentNames.length; i++) {
         returnSession.scheduleComponents.push(writeScheduleComponent(scheduleComponentNames[i], courseComponents, sessionNumber));
     };
@@ -51,13 +52,44 @@ function Session(sessionNumber, sessionWeekDay, sessionDate, week, scheduleCompo
 
     return returnSession;
 }
+var sortCourseComponents = function(courseComponents,numberOfSessions){
+    //returns an array where
+    console.log('Unsorted course components');
+    console.log(courseComponents);
+    console.log('Sort now');
+    var sortedCourseComponents = [];
+
+    courseComponents.forEach(function (ele, index, arr) {
+        if(typeof ele.sessionDue != "undefined"){
+            if(sortedCourseComponents[ele.sessionDue] == undefined){
+                sortedCourseComponents[ele.sessionDue] = [ele];
+                console.log('Index : ' + index);
+                console.log(sortedCourseComponents);
+                console.log('At that index in our array is value: ');
+                console.log(sortedCourseComponents[ele.sessionDue])
+
+            }else{
+                sortedCourseComponents[ele.sessionDue].push(ele);
+                console.log('Index : ' + index)
+                console.log(sortedCourseComponents);
+                console.log('At that index in our array is value: ');
+                console.log(sortedCourseComponents[ele.sessionDue])
+            };
+
+        }
+    });
+    //console.log('sorted course components');
+    //console.log(sortedCourseComponents);
+    return sortedCourseComponents;
+};
 function Schedule(configObj) {
     // update internal values
     var returnSchedule = {};
-    returnSchedule.courseComponents = configObj.courseComponents
-    //didn't want to type long things everywhere
-    var cnames = configObj.scheduleComponentNames;
-    returnSchedule.scheduleComponentNames = cnames;
+    returnSchedule.courseComponents = configObj.courseComponents;
+    returnSchedule.scheduleComponentNames  = configObj.scheduleComponentNames;
+    returnSchedule.startDate = configObj.startDate;
+    returnSchedule.numberOfSessions = configObj.numberOfSessions;
+    returnSchedule.className = configObj.className;
 
     var weekdayNumberToWord = {
         0: "Sunday",
@@ -68,29 +100,28 @@ function Schedule(configObj) {
         5: "Friday",
         6: "Saturday"
     };
-    var currentDay, currentWeekNumber;
-    returnSchedule.startDate = configObj.startDate;
-    returnSchedule.numberOfSessions = configObj.numberOfSessions;
+
+
     var startDateDate = new Date(configObj.startDate);
     // sort list just in case people entered dates in the wrong order.
     if (weekdayNumberToWord[startDateDate.getDay()] === undefined) {
-        //cons`ole.log("Start date is not valid")
+        //console.log("Start date is not valid")
     } else {
         //console.log("Start date is valid")
     }
+    var currentDay, currentWeekNumber;
     currentDay = startDateDate;
     currentWeekNumber = configObj.startWeekNumber;
     returnSchedule.sessions = [];
+    var sortedCourseComponents = sortCourseComponents(configObj.courseComponents)
     for (var dayOfSession = 1; dayOfSession <= configObj.numberOfSessions; dayOfSession++) {
-        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber, cnames, configObj.courseComponents);
+        var currentSession = new Session(dayOfSession, weekdayNumberToWord[currentDay.getDay()], dateFormat(currentDay), currentWeekNumber, configObj.scheduleComponentNames, sortedCourseComponents);
         returnSchedule.sessions.push(currentSession);
         var dateObj = getNextSessionDate(currentDay, configObj.sessionDays, currentWeekNumber, configObj.breakStartDate, configObj.resumeDate);
         //console.log(dateObj)
         currentWeekNumber = dateObj.weekNumber;
         currentDay = dateObj.nextDate;
-
-    }
-    
+    };
     return returnSchedule;
 }
 /*
@@ -105,15 +136,17 @@ function writeScheduleComponent(componentCategory, courseComponents, sessionNumb
         case "Due":
             var dueLinks = [];
             //TODO: May create problems switching between base 0 and base 1 indexing
+            //may have fixed this
+            var componentArr = courseComponents[sessionNumber];
+            //dueLinks
 
-            for (var i = 0; i < courseComponents.length; i++) {
-                var component = courseComponents[i];
-                //dueLinks
-                if (component.sessionDue == sessionNumber) {
-                    dueLinks.push("<a href='/" + component.type + "/" + component.url + "'>" + component.name + "</a>")
-                }
-
+            if(componentArr == undefined || componentArr.length == undefined){
+                returnComponent.values = dueLinks;
+                break;
             }
+            componentArr.forEach(function(component,ind,arr){
+                dueLinks.push("<a href='/" + component.type + "/" + component.url + "'>" + component.name + "</a>")
+            });
             returnComponent.values = dueLinks;
             break;
         case "Topics":

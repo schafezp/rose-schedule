@@ -18,7 +18,8 @@ app.controller('ScheduleCtrl', ['$scope', '$sce', '$http', '$location', '$anchor
 
     //ScheduleService.saveSessions();
 
-    $scope.sessions = ScheduleService.sessions;
+    $scope.schedule = ScheduleService.schedule;
+    $scope.sessions = ScheduleService.schedule.sessions;
     $scope.componentNames = ScheduleService.componentNames;
     $scope.className = ScheduleService.className;
 

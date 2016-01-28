@@ -24,7 +24,10 @@ module.exports = function(config) {
       'src/js/controllers/*',
       'src/js/services/*',
       'src/js/filters/*',
-      'tests/*Spec.js'
+      'tests/*Spec.js',
+
+        //directive templates
+      'src/views/listAssignments.html'
     ],
 
 
@@ -37,6 +40,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/views/listAssignments.html' : ['ng-html2js']
     },
 
 
