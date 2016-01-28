@@ -1,19 +1,21 @@
-describe('Unit: ScheduleController',function(){
+describe('Unit: ScheduleService',function(){
+    var scope,ScheduleService,httpBackend;
     beforeEach(module('schedule'));
-    var ctrl,scope, scheduleServiceFake;
-    beforeEach(inject(function($controller, $rootScope){
-        scope = $rootScope.$new();
+    beforeEach(inject(function(_ScheduleService_,$httpBackend){
+        ScheduleService = _ScheduleService_;
+        httpBackend = $httpBackend;
 
-        scheduleServiceFake = { schedule : {
+        //mock behavior of httpBackend
+        schedule = {
             className: "CSSE 490",
-            componentNames: [
+                componentNames: [
                 "Due",
                 "Topics",
                 "Resources",
                 "Reading",
                 "Programs"
             ],
-            sessions: [
+                sessions: [
                 {
                     sessionNumber: 1,
                     sessionWeekDay: "Monday",
@@ -57,17 +59,20 @@ describe('Unit: ScheduleController',function(){
                     ]
                 }
             ]
-        }};
-        ctrl = $controller('ScheduleCtrl',{
-            $scope: scope,
-            ScheduleService: scheduleServiceFake
-        });
+        };
+
+        httpBackend.when('GET','src/json/schedule.json').respond(schedule);
+
+
     }));
-    describe('ScheduleCtrl',function(){
-        it('should have access to data on scope from scheduleService',function(){
-            expect(scope.schedule).toBeDefined();
-            expect(scope.schedule.componentNames).toBeDefined();
-            expect(scope.schedule.className).toBeDefined();
-        });
+    it('should load schedule service and its methods', function () {
+        expect(ScheduleService).toBeDefined();
+        expect(ScheduleService.saveSessions).toBeDefined();
+    });
+    it('Should load the data',function(){
+        ScheduleService.saveSessions();
+        console.log(ScheduleService);
+        expect(ScheduleService.schedule).toBeDefined();
+        expect(ScheduleService.className).toBeDefined();
     });
 });

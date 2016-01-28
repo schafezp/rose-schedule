@@ -23,6 +23,7 @@ app.service('ScheduleService', function ($http) {
             });
         })
 
+
     };
     self.getSessionDate = function (sessionNumber) {
         var res = [];
