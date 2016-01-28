@@ -4,10 +4,7 @@ describe('Unit: ScheduleService',function(){
     beforeEach(inject(function(_ScheduleService_,$httpBackend){
         ScheduleService = _ScheduleService_;
         httpBackend = $httpBackend;
-         // httpBackend.when('GET','src/json/schedule.json').respond(scheduleFake);
-        
-        // httpBackend.when('GET','src/json/schedule.json').respond($resource('src/json/schedule.json'));
-        //mock behavior of httpBackend
+        httpBackend.when('GET','src/json/schedule.json').respond(scheduleFake);
         scheduleFake = {
             courseComponents: [
                 {
@@ -115,7 +112,7 @@ describe('Unit: ScheduleService',function(){
             ]
         };
         
-        httpBackend.when('GET','src/json/schedule.json').respond(scheduleFake);
+
     }));
     
     it('should exist and have a saveSessions method', function () {
