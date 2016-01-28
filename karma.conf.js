@@ -24,6 +24,7 @@ module.exports = function(config) {
       'src/js/controllers/*',
       'src/js/services/*',
       'src/js/filters/*',
+      'src/js/directives/*',
       'tests/*Spec.js',
 
         //directive templates
