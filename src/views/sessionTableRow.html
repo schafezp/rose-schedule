@@ -1,0 +1,22 @@
+
+<td class="text-center">{{session.week}}</td>
+<td>
+    <p class="text-center">
+        <a id="session{{session.sessionNumber}}" class="a-unstyled"> {{session.sessionNumber}}</a>
+        <br/>
+        {{session.sessionDate}}
+    </p>
+</td>
+<!--Todo: This block of code below has become very messy-->
+<td ng-repeat="componentName in componentNames">
+    <div ng-repeat="component in session.scheduleComponents">
+        <ul ng-show="component.name == componentName">
+            <li ng-repeat="value in component.values">
+                <div ng-bind-html="to_trusted(value)"></div>
+            </li>
+        </ul>
+    </div>
+    {{session.name}}
+    {{component}}
+
+</td>
