@@ -9,7 +9,8 @@ app.directive('listAssignments', ['ScheduleService',function(ScheduleService)
         templateUrl: 'src/views/listAssignments.html',
         link: function (scope, element, attrs){
             scope.getSessionDate = ScheduleService.getSessionDate;
-            scope.assignmentType = attrs.$attr;
+            //scope.get_Keys = ScheduleService.get_Keys;
+            //scope.assignmentType = attrs.$attr;
         }
   };
 }]

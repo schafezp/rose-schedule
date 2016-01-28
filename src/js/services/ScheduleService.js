@@ -25,20 +25,32 @@ app.service('ScheduleService', function ($http) {
 
     };
     self.getSessionDate = function (sessionNumber) {
-        //return self.scheduleSessions;
         var res = [];
         self.sessions.forEach(function (element, index, array) {
-                //res.push(element.sessionDate);
-                //res.push(element.sessionNumber);
                 if (element.sessionNumber == sessionNumber) {
                     res.push(element.sessionDate);
-                    //return sessionNumber.sessionDate;
-                    //res.push(element.sessionDate);
                 }
             }
         );
         return res[0];
     };
+    //self.getKeyPair = function(keyPairObj){
+    //    var keys = [];
+    //    var values = [];
+    //    for(var key in keyPairObj){
+    //        if(keyPairObj.hasOwnProperty(key)){
+    //            keys.push(key);
+    //            values.push(keyPairObj[key]);
+    //        }
+    //    }
+    //    return [keys,values];
+    //};
+    //self.get_Keys = function(keyPairObj){
+    //    return self.getKeyPair(keyPairObj)[0];
+    //};
+    //self.getValues = function(keyPairObj){
+    //    return self.getKeyPair(keyPairObj)[1];
+    //};
 
     //part of the schedule JSON now
     //self.scheduleComponentNames = ["Due", "Topics", "Resources", "Reading", "Programs"];
