@@ -1,14 +1,58 @@
 describe('Unit: ScheduleService',function(){
-    var scope,ScheduleService,httpBackend;
+    var scope,ScheduleService,httpBackend,scheduleFake;
     beforeEach(module('schedule'));
     beforeEach(inject(function(_ScheduleService_,$httpBackend){
         ScheduleService = _ScheduleService_;
         httpBackend = $httpBackend;
-
+         // httpBackend.when('GET','src/json/schedule.json').respond(scheduleFake);
+        
+        // httpBackend.when('GET','src/json/schedule.json').respond($resource('src/json/schedule.json'));
         //mock behavior of httpBackend
-        schedule = {
+        scheduleFake = {
+            courseComponents: [
+                {
+                    type: "homework",
+                    session: "1",
+                    name: "Homework 1",
+                    number: 1,
+                    sessionDue: 3,
+                    url: "homework-1.html",
+                    solution: "",
+                    sample: ""
+                },
+                {
+                    type: "homework",
+                    session: "2",
+                    name: "Homework 2",
+                    number: 2,
+                    sessionDue: 4,
+                    url: "homework-2.html",
+                    solution: "",
+                    sample: ""
+                },
+                {
+                    type: "lab",
+                    session: "1",
+                    name: "Lab 1",
+                    number: 1,
+                    sessionDue: 3,
+                    url: "lab-1.html",
+                    solution: "",
+                    sample: ""
+                },
+                {
+                    type: "lab",
+                    session: "2",
+                    name: "Lab 2",
+                    number: 2,
+                    sessionDue: 6,
+                    url: "lab-2.html",
+                    solution: "",
+                    sample: ""
+                },
+            ],
             className: "CSSE 490",
-                componentNames: [
+            scheduleComponentNames: [
                 "Due",
                 "Topics",
                 "Resources",
@@ -60,19 +104,28 @@ describe('Unit: ScheduleService',function(){
                 }
             ]
         };
-
-        httpBackend.when('GET','src/json/schedule.json').respond(schedule);
-
-
+        
+        httpBackend.when('GET','src/json/schedule.json').respond(scheduleFake);
     }));
+    
     it('should load schedule service and its methods', function () {
         expect(ScheduleService).toBeDefined();
         expect(ScheduleService.saveSessions).toBeDefined();
     });
-    it('Should load the data',function(){
+    it('should load the data',function(){
+        
+        // httpBackend.flush();
         ScheduleService.saveSessions();
-        console.log(ScheduleService);
+        httpBackend.flush();
         expect(ScheduleService.schedule).toBeDefined();
         expect(ScheduleService.className).toBeDefined();
+        expect(ScheduleService.componentNames).toBeDefined();
+        expect(ScheduleService.homework).toBeDefined();
+        expect(ScheduleService.labs).toBeDefined();
+    });
+    it('should get session dates from session numbers',function(){
+        ScheduleService.saveSessions();
+        httpBackend.flush();
+        expect(ScheduleService.getSessionDate(1)).toEqual('11/30/2015');        
     });
 });
