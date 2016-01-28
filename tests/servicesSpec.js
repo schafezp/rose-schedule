@@ -50,6 +50,16 @@ describe('Unit: ScheduleService',function(){
                     solution: "",
                     sample: ""
                 },
+                {
+                    type: "lab",
+                    session: "3",
+                    name: "Lab 3",
+                    number: 3,
+                    sessionDue: 9,
+                    url: "lab-3.html",
+                    solution: "",
+                    sample: ""
+                },
             ],
             className: "CSSE 490",
             scheduleComponentNames: [
@@ -108,24 +118,29 @@ describe('Unit: ScheduleService',function(){
         httpBackend.when('GET','src/json/schedule.json').respond(scheduleFake);
     }));
     
-    it('should load schedule service and its methods', function () {
+    it('should exist and have a saveSessions method', function () {
         expect(ScheduleService).toBeDefined();
         expect(ScheduleService.saveSessions).toBeDefined();
     });
     it('should load the data',function(){
-        
-        // httpBackend.flush();
         ScheduleService.saveSessions();
         httpBackend.flush();
+        //all it's properties should be defined
         expect(ScheduleService.schedule).toBeDefined();
+        expect(ScheduleService.schedule.sessions).toBeDefined();
+        expect(ScheduleService.sessions).toBeDefined();
         expect(ScheduleService.className).toBeDefined();
         expect(ScheduleService.componentNames).toBeDefined();
         expect(ScheduleService.homework).toBeDefined();
         expect(ScheduleService.labs).toBeDefined();
+
+        expect(ScheduleService.sessions.length).toEqual(1);
+        expect(ScheduleService.labs.length).toEqual(3);
+        expect(ScheduleService.homework.length).toEqual(2);
     });
     it('should get session dates from session numbers',function(){
         ScheduleService.saveSessions();
         httpBackend.flush();
-        expect(ScheduleService.getSessionDate(1)).toEqual('11/30/2015');        
+        expect(ScheduleService.getSessionDate(1)).toEqual('11/30/2015');
     });
 });
