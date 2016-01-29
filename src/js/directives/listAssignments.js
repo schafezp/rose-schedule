@@ -1,4 +1,4 @@
-app.directive('listAssignments', ['ScheduleService',function(ScheduleService)
+app.directive('listAssignments', function()
 {
     return {
         //restrict: 'E',
@@ -6,12 +6,6 @@ app.directive('listAssignments', ['ScheduleService',function(ScheduleService)
             assignments: '=',
             assignmenttype: '@'
         },
-        templateUrl: 'src/views/listAssignments.html',
-        link: function (scope, element, attrs){
-            scope.getSessionDate = ScheduleService.getSessionDate;
-            //scope.get_Keys = ScheduleService.get_Keys;
-            //scope.assignmentType = attrs.$attr;
-        }
-  };
-}]
-);
+        templateUrl: 'src/views/listAssignments.html'
+   };
+});
