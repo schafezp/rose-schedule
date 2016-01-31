@@ -28,7 +28,7 @@ module.exports = function(config) {
       'tests/*Spec.js',
 
         //directive templates
-      'src/views/listAssignments.html'
+      'src/views/templates/*.html'
     ],
 
 
@@ -41,9 +41,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/views/*.html' : ['ng-html2js']
+      'src/views/templates/*.html' : ['ng-html2js']
     },
 
+    ngHtml2JsPreprocessor: {
+      // setting this option will create only a single module that contains templates
+      // from all the files, so you can load them all with module('foo')
+      moduleName: 'templates'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

@@ -6,6 +6,6 @@ app.directive('listAssignments', function()
             assignments: '=',
             assignmenttype: '@'
         },
-        templateUrl: 'src/views/listAssignments.html'
+        templateUrl: 'src/views/templates/listAssignments.html'
    };
 });

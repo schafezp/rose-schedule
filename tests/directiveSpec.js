@@ -1,23 +1,34 @@
 describe('Rose Schedule Directives',function(){
 
-
-    describe('directive: listAssignments',function(){
+    beforeEach(angular.mock.module('schedule'));
+    
+    describe('template',function(){
       //load module that contains the directives  
-      beforeEach(module('schedule','src/views/listAssignments.html'));
+      
 
         //load the templates
       //beforeEach(module('src/views/listAssignments.html'));
 
-      var $compile, $scope, element;
+      var $compile, $scope, $httpBackend;
 
-      beforeEach(inject( function( _$compile_,_$rootScope_){
+      //Load the templates module
+      beforeEach(module('templates'));
+
+      beforeEach(inject( function( _$compile_,_$rootScope_, _$httpBackend_){
           $compile = _$compile_;
           $scope = _$rootScope_.$new();
+          $httpBackend = _$httpBackend_;
+
+      } ));
+
+      it("should render the labs as passed in by $scope", inject(function(){
+        
+        //Do not respond to 'schedule' module request for Schedule.json
+        $httpBackend.whenGET('src/json/schedule.json').respond("");
 
 
-
-          element = angular.element("<list-assignments assignments='labs' assignmenttype='lab'></list-assignments>");
-          $scope.labs = [
+        var template = $compile("<list-assignments assignments='labs' assignmenttype='lab'></list-assignments>")($scope);
+        $scope.labs = [
             {
                "type": "lab",
                "session": "1",
@@ -50,23 +61,20 @@ describe('Rose Schedule Directives',function(){
             }
           ];
           $scope.lab = "lab";
-          $compile(element)($scope);
+
           $scope.$digest();
-        }));
 
-        it('Should load and capitalize the assignment type',function(){
-            //var rows = element.find('tr');
+          //Render the template as a string. 
+          var templateAsHtml = template.html();
 
-            var header = element.find('th');
-            expect(header.eq(0).text()).toEqual('Lab');
-            console.log(element);
-        });
+          //Verify that the $scope variables are in the template. 
+          var capitalizedAssignmentType = $scope.lab.charAt(0).toUpperCase() + $scope.lab.substr(1).toLowerCase();
+          expect(templateAsHtml).toContain($scope.lab);
 
-        // it('Should display the assignments',function(){
-        //     //var links = element.find('a');
-        //     //expect(links.eq(0).text()).toEqual('Lab 1');
-        // });
+      }));
 
+          
+    
 
     });
 });

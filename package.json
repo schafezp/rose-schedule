@@ -12,7 +12,7 @@
     "bootstrap": "^3.3.6",
     "express": "^4.13.3",
     "httpbackend": "^2.0.0",
-    "ng-html2js": "^2.0.0",
+    "ng-html2js": "^2.0.0"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
